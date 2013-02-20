@@ -3,131 +3,67 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="./css/bootstrap.css" rel="stylesheet">
         <link href="./css/bootstrap-responsive.css" rel="stylesheet">
         <link href="./css/ka-ching.css" rel="stylesheet">
         <script src="bootstrap/js/jQuery.js"></script>  
         <script src="bootstrap/js/bootstrap.js"></script> 
-        <script src="bootstrap/js/bootstrap.min.js"></script>   
-        <title>Transaction Gallery</title>
+        <script src="bootstrap/js/bootstrap.min.js"></script>         
+        <title>Purchase Summary</title>
     </head>
-    <body>
+    <body>   
         <!--NavBar-->
         <div class="navbar navbar-fixed-top">  
             <div class="navbar-inner">  
                 <div class="container">  
                     <!--Menu Icon-->
-                    <div class="nav">
-                        <a class="btn btn-primary pull-left" href="#">Home</a>    
-                    </div>
-                    </ul>  
+                            <a class="btn btn-primary pull-left" href="#">Cancel</a>   
+                            <a class="btn btn-primary pull-right" href="#">Done</a>       
                 </div>  
             </div>  
         </div>
-
         <div class="container-fluid">
-            
-            <!---Item 1-->
             <div class="container">
                 <div class="row-fluid">
-                    <div class="galleryDisplay">
-                        Item Photo
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class ="row-fluid">
-                    <table class="table">
-                        <thread>
-                            <tr>
-                                <th>Date</th>
-                                <th>Cost</th>
-                            </tr>
-                        </thread>
+                    <table>
                         <tr>
-                            <td> 21 Jan 2013 </td>
-                            <td> $340 </td>
+                            <td>
+                                <div class="receiptPhotoArea">Receipt Photo</div>
+                            </td>
+                            <td width="10px"></td>
+                            <td>
+                                <div class="receiptPhotoArea">Item Photo</div>
+                            </td>
                         </tr>
                     </table>
                 </div>
             </div>
-            
-             <!---Item 2-->
             <div class="container">
                 <div class="row-fluid">
-                    <div class="galleryDisplay">
-                        Item Photo
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class ="row-fluid">
-                    <table class="table">
-                        <thread>
-                            <tr>
-                                <th>Date</th>
-                                <th>Cost</th>
-                            </tr>
-                        </thread>
+                    <table class="table table-bordered">
                         <tr>
-                            <td> 21 Jan 2013 </td>
-                            <td> $340 </td>
+                            <td width="50"><b>Date</b></td>
+                            <td>21 Jan 2013</td>
                         </tr>
+                        <tr>
+                            <td width="50"><b>Location</b></td>
+                            <td>Ang Moh Kio</td>
+                        </tr>
+                        <tr>
+                            <td width="50"><b>Price</b></td>
+                            <td>$60</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><b>Items Purchased</b></td>
+                        </tr>
+                        <tr height="85">
+                            <td colspan="2"></td>
+                        </tr>                        
                     </table>
                 </div>
             </div>
-             
-            <!---Item 3-->
-            <div class="container">
-                <div class="row-fluid">
-                    <div class="galleryDisplay">
-                        Item Photo
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class ="row-fluid">
-                    <table class="table">
-                        <thread>
-                            <tr>
-                                <th>Date</th>
-                                <th>Cost</th>
-                            </tr>
-                        </thread>
-                        <tr>
-                            <td> 21 Jan 2013 </td>
-                            <td> $340 </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            
-            <!---Item 4-->
-            <div class="container">
-                <div class="row-fluid">
-                    <div class="galleryDisplay">
-                        Item Photo
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class ="row-fluid">
-                    <table class="table">
-                        <thread>
-                            <tr>
-                                <th>Date</th>
-                                <th>Cost</th>
-                            </tr>
-                        </thread>
-                        <tr>
-                            <td> 21 Jan 2013 </td>
-                            <td> $340 </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>            
-            
         </div>
-    </body>
+    </div>
+</body>
 </html>
+
