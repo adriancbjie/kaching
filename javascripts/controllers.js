@@ -1,0 +1,2 @@
+function MainLayoutCtrl($scope, $routeParams) {
+}
