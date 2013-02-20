@@ -1,34 +1,51 @@
-<!--NavBar-->
+ <!--NavBar-->
 <div class="navbar navbar-fixed-top">  
     <div class="navbar-inner">  
         <div class="container">  
             <!--Menu Icon-->
-            <div class="nav">
-                <a class="btn btn-primary pull-left" href="#">Cancel</a>    
-                <a class="btn btn-primary pull-right" href="#">Done</a>    
-            </div>
-            </ul>  
+                    <a class="btn btn-primary pull-left" href="#">Cancel</a>   
+                    <a class="btn btn-primary pull-right" href="#">Done</a>       
         </div>  
     </div>  
 </div>
 <div class="container-fluid">
-
-    <!--Photo Containers-->
     <div class="container">
         <div class="row-fluid">
-            <div class="well span6">
-                Receipt Photo
-            </div>
-            <div class="well span6">
-                Product Photo
-            </div>  
+            <table>
+                <tr>
+                    <td>
+                        <div class="receiptPhotoArea">Receipt Photo</div>
+                    </td>
+                    <td width="10px"></td>
+                    <td>
+                        <div class="receiptPhotoArea">Item Photo</div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-
-    <!--Receipt Information-->
     <div class="container">
-        <div class="well">
-            Receipt Information
+        <div class="row-fluid">
+            <table class="table table-bordered">
+                <tr>
+                    <td width="50"><b>Date</b></td>
+                    <td>21 Jan 2013</td>
+                </tr>
+                <tr>
+                    <td width="50"><b>Location</b></td>
+                    <td>Ang Moh Kio</td>
+                </tr>
+                <tr>
+                    <td width="50"><b>Price</b></td>
+                    <td>$60</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Items Purchased</b></td>
+                </tr>
+                <tr height="85">
+                    <td colspan="2"></td>
+                </tr>                        
+            </table>
         </div>
     </div>
 </div>

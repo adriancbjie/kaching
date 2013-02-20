@@ -1,3 +1,5 @@
 function MainLayoutCtrl($scope, $routeParams) {
-  $scope.phoneId = $routeParams.phoneId;
+  $scope.toggleCalendar = function(name) {
+      
+  }
 }
