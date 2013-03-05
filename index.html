@@ -8,11 +8,15 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+        <!-- <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css"> -->
 
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap.css">
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap-responsive.css">
         <script src="javascripts/bootstrap.js"></script>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/sidetap.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/default.css">
+        <script type="text/javascript" src="javascripts/sidetap.js"></script>
 
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
         <script src="javascripts/app.js"></script>
@@ -22,7 +26,46 @@
     </head>
     <body ng-controller="MainLayoutCtrl">
 
+        <div class="sidetap">
+          <div class="stp-nav">
+            <div>
+              <nav>
+                <a href="#" class="selected">Selected Nav Item</a>
+                <a href="#">Second Nav Item</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="stp-content" id="content">
+            <header class="stp-fake-header">&nbsp;</header>
+            <div class="stp-overlay nav-toggle">&nbsp;</div>
+
+            <!-- Content Divs Look Like This -->
+            <div class="stp-content-panel">
+              <header>
+                <a href="javascript:void(0)" class="header-button icon menu"><span>Menu</span></a>
+                <h1>Header Text</h1>
+              </header>
+              <div class="stp-content-frame">
+                <div class="stp-content-body">
+                  <div>
+                    Content goes here.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End content Div -->
+          </div>
+        </div>
+        
+        <script>
+          var st = sidetap();
+          $(".header-button.menu").on("click",st.toggle_nav)
+        </script>
+
         <div ng-view></div>
+
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
     </body>
 </html>
