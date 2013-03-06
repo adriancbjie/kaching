@@ -1,0 +1,36 @@
+<div class="navbar navbar-fixed-top">  
+    <div class="navbar-inner">  
+        <div class="container">  
+            <!--Menu Icon-->
+            <ul class="nav">
+            <div class="nav">
+                <a class="btn btn-primary pull-left" href="#">Cancel</a>       
+            </div>
+            </ul>  
+        </div>  
+    </div>  
+</div>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="cameraCaptureArea">
+            Camera Capture Area                   
+        </div>
+        <video id="live" autoplay></video>
+        <script type="text/javascript">
+          video = document.getElementById("live")
+
+          navigator.webkitGetUserMedia("video",
+              function(stream) {
+                video.src = window.webkitURL.createObjectURL(stream)
+              },
+              function(err) {
+                console.log("Unable to get video stream!")
+              }
+          )
+        </script>
+        <div class="row-fluid" style="text-align:center";>
+            <a class="btn btn-primary btn-large" href="#/purchase_summary.html"><i class="icon-camera"></i>CAMERA ICON</a>
+        </div>
+    </div>
+</div>
