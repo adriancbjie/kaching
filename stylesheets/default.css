@@ -237,11 +237,11 @@ header {
 }
 header .header-button {
   background: #003300;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #003300), color-stop(100%, #003300));
-  background: -webkit-linear-gradient(top, #003300, #003300);
-  background: -moz-linear-gradient(top, #003300, #003300);
-  background: -o-linear-gradient(top, #003300, #003300);
-  background: linear-gradient(top, #003300, #003300);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #006600), color-stop(100%, #003300));
+  background: -webkit-linear-gradient(top, #006600, #003300);
+  background: -moz-linear-gradient(top, #006600, #003300);
+  background: -o-linear-gradient(top, #006600, #003300);
+  background: linear-gradient(top, #006600, #003300);
   border: 1px solid #003300;
   color: white;
   font-size: 13px;
@@ -257,6 +257,7 @@ header .header-button {
   transform: translatez(0);
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+  text-align: center;
   top: 7px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
