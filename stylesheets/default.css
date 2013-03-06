@@ -126,9 +126,10 @@ table {
   Demo app: Stonehenge
 */
 body {
-  background: #171a21;
+  background: #ffffff;
   color: #fff;
-  font-family: 'Helvetica Neue', 'Helvetica-Neue', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
+  font-color: #696969;
   font-size: 1em;
   font-weight: normal;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
@@ -294,15 +295,12 @@ header .header-button.info span {
   background-size: 8px 17px;
 }
 .stp-content {
-  background: #171a21;
+  background: #ffffff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
 .stp-content-panel {
-  background: #171a21;
-}
-.container {
-  padding: 54px 10px 10px;
+  background: #ffffff;
 }
