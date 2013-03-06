@@ -6,18 +6,15 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap.css">
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap-responsive.css">
-        <script src="javascripts/bootstrap.js"></script>
-
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/sidetap.css">
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/default.css">
-        <script type="text/javascript" src="javascripts/sidetap.js"></script>
-
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/sidetap.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
         <script src="javascripts/app.js"></script>
         <script src="javascripts/controllers.js"></script>
@@ -25,17 +22,6 @@
         <title>Home</title>
     </head>
     <body ng-controller="MainLayoutCtrl">
-	
-		<div class="sidetap">
-		  <div class="stp-nav">
-			<div>
-			  <nav>
-				  <a href="#" class="selected">Home Page</a>
-				  <a href="#">Monthly Statement</a>
-				  <a href="#">Transaction Records</a>
-			  </nav>
-			</div>
-		  </div>
 
         <div ng-view></div>
 
