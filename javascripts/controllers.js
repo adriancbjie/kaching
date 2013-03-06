@@ -1,6 +1,6 @@
 function MainLayoutCtrl($scope, $routeParams) {
 
-  $scope.receipts =
+  $scope.all_receipts =
 	[{
 	    'name': 'WATAMI Japanese Casual Restaurant',
 	    'date': '2013-02-01',
@@ -65,4 +65,29 @@ function MainLayoutCtrl($scope, $routeParams) {
 	    'scharge': 0,
 	    'total': 1.25
 	}];
+
+	$scope.receipts =
+	[{
+	    'name': 'Home N Office Products',
+	    'date': '30-01-2013',
+	    'location': 'Serangoon N Ave 2',
+	    'image': 'https://dl.dropbox.com/u/3179945/kaching/receipt_3.jpg',
+	    'items': [{
+	        'name': 'Zebra Permanent Marker',
+	        'quantity': '1',
+	        'price': 1.2
+	    }],
+	    'gst': 0.05,
+	    'scharge': 0,
+	    'total': 1.25
+	}];
+
+	$scope.decipher = function() {
+		$scope.chosen_receipt = $scope.all_receipts[0];
+	};
+
+	$scope.decipher = function() {
+		$scope.messages.push($scope.chosen_receipt);
+	};
+	
 }

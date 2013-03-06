@@ -9,26 +9,17 @@
 
 <div class="container-fluid">
     <div class="container">
+        <div id="decipher">
+          Analyzing...
+        </div>
         <div class="cameraCaptureArea">
             <div style="align:center; vertical-align:middle">
 				Deciphering Photo
 			</div>			
         </div>
-        <video id="live" autoplay></video>
-        <script type="text/javascript">
-          video = document.getElementById("live")
 
-          navigator.webkitGetUserMedia("video",
-              function(stream) {
-                video.src = window.webkitURL.createObjectURL(stream)
-              },
-              function(err) {
-                console.log("Unable to get video stream!")
-              }
-          )
-        </script>
         <div class="row-fluid" style="text-align:center";>
-            <a class="btn btn-primary btn-large" href="#/purchase_summary.html"><i class="icon-camera"></i>CAMERA ICON</a>
+            <a class="btn btn-primary btn-large" href="#/purchase_summary.html" ng-click="decipher()"><i class="icon-camera"></i>CAMERA ICON</a>
         </div>
     </div>
 </div>
