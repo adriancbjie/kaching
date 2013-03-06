@@ -217,6 +217,7 @@ header {
   background: -o-linear-gradient(top, #228B22, #006400);
   background: linear-gradient(top, ##228B22, #006400);
   border-bottom: 1px solid #003300;
+  border-top: 1px solid #003300;
   color: white;
   display: block;
   height: 50px;
@@ -235,17 +236,17 @@ header {
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2), 0px 1px 5px rgba(0, 0, 0, 0.75);
 }
 header .header-button {
-  background: #472457;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66337c), color-stop(100%, #472457));
-  background: -webkit-linear-gradient(top, #66337c, #472457);
-  background: -moz-linear-gradient(top, #66337c, #472457);
-  background: -o-linear-gradient(top, #66337c, #472457);
-  background: linear-gradient(top, #66337c, #472457);
-  border: 1px solid #32163d;
+  background: #003300;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #003300), color-stop(100%, #003300));
+  background: -webkit-linear-gradient(top, #003300, #003300);
+  background: -moz-linear-gradient(top, #003300, #003300);
+  background: -o-linear-gradient(top, #003300, #003300);
+  background: linear-gradient(top, #003300, #003300);
+  border: 1px solid #003300;
   color: white;
   font-size: 13px;
   font-weight: bold;
-  height: 28px;
+  height: 43px;
   left: 5px;
   line-height: 26px;
   padding: 0 8px;
