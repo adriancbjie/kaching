@@ -30,15 +30,15 @@
             <table class="table table-bordered">
                 <tr>
                     <td width="50"><b>Date</b></td>
-                    <td>{{receipt.date}}</td>
+                    <td>{{receipts[0].date}}</td>
                 </tr>
                 <tr>
                     <td width="50"><b>Location</b></td>
-                    <td>{{receipt.location}}</td>
+                    <td>{{receipts[0].location}}</td>
                 </tr>
                 <tr>
                     <td width="50"><b>Price</b></td>
-                    <td>${{receipt.total}}</td>
+                    <td>${{receipts[0].total}}</td>
                 </tr>
                 <tr>
                     <td colspan="2"><b>Items Purchased</b></td>
@@ -47,7 +47,7 @@
                 <tr height="85">
                     <td colspan="2">
                         <ul>
-                          <li ng-repeat="item in receipt.items">
+                          <li ng-repeat="item in receipts[0].items">
                             {{item.name}} {{item.quantity}}qty x ${{item.price}}
                           </li>
                         </ul>
