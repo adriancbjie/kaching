@@ -210,16 +210,16 @@ nav > a.selected:after {
   opacity: 1;
 }
 header {
-  background: #532667;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #743f8d), color-stop(100%, #532667));
-  background: -webkit-linear-gradient(top, #743f8d, #532667);
-  background: -moz-linear-gradient(top, #743f8d, #532667);
-  background: -o-linear-gradient(top, #743f8d, #532667);
-  background: linear-gradient(top, #743f8d, #532667);
-  border-bottom: 1px solid #281730;
+  background: #006400;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #228B22), color-stop(100%, #006400));
+  background: -webkit-linear-gradient(top, #228B22, #006400);
+  background: -moz-linear-gradient(top, #228B22, #006400);
+  background: -o-linear-gradient(top, #228B22, #006400);
+  background: linear-gradient(top, ##228B22, #006400);
+  border-bottom: 1px solid #003300;
   color: white;
   display: block;
-  height: 43px;
+  height: 50px;
   position: absolute;
   -webkit-transform: translatez(0);
   -moz-transform: translatez(0);
@@ -265,34 +265,6 @@ header .header-button {
   -moz-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.15);
   -o-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.15);
   box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-header .header-button.right {
-  left: auto;
-  right: 5px;
-}
-header .header-button.icon span {
-  display: inline-block;
-  text-indent: -9999px;
-}
-header .header-button.menu span {
-  background: transparent url('img/menu.png') no-repeat;
-  height: 15px;
-  margin: 6px 2px 0;
-  width: 17px;
-  -webkit-background-size: 17px 15px;
-  -moz-background-size: 17px 15px;
-  -o-background-size: 17px 15px;
-  background-size: 17px 15px;
-}
-header .header-button.info span {
-  background: transparent url('img/info.png') no-repeat;
-  height: 17px;
-  margin: 5px 5px 0;
-  width: 8px;
-  -webkit-background-size: 8px 17px;
-  -moz-background-size: 8px 17px;
-  -o-background-size: 8px 17px;
-  background-size: 8px 17px;
 }
 .stp-content {
   background: #ffffff;
