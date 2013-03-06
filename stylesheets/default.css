@@ -135,6 +135,7 @@ body {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   word-wrap: break-word;
   -webkit-text-size-adjust: none;
+  padding-top: 50px;
 }
 h1 {
   color: white;
