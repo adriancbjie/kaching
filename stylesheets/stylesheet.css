@@ -2,6 +2,10 @@ root {
     display: block;
 }
 
+#decipher {
+  display:none;
+}
+
 .galleryDisplay {
   min-height: 320px;
   padding: 19px;

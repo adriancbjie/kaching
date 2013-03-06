@@ -83,6 +83,7 @@ function MainLayoutCtrl($scope, $routeParams) {
 	}];
 
 	$scope.decipher = function() {
+		$('#decipher').show();
 		$scope.chosen_receipt = $scope.all_receipts[0];
 	};
 
