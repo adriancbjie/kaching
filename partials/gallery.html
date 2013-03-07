@@ -12,7 +12,6 @@
 </div>
 
 <div class="container-fluid" ng-repeat="r in receipts">
-    
     <!---Item 1-->
     <div class="container">
         <div class="row-fluid">
@@ -31,7 +30,7 @@
                     </tr>
                 </thead>
                 <tr>
-                    <td> {{r.date}} </td>
+                    <td> {{receipts}}{{r.date}} </td>
                     <td> ${{r.total}} </td>
                 </tr>
             </table>

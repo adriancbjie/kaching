@@ -4,7 +4,7 @@
         <div class="container">  
             <!--Menu Icon-->
                     <a class="btn btn-primary pull-left" href="#">Cancel</a>   
-                    <a class="btn btn-primary pull-right" href="#/gallery.html">Done</a>       
+                    <a class="btn btn-primary pull-right" ng-click="saveReceipt(chosen_receipt)" href="#/gallery.html">Done</a>       
         </div>  
     </div>  
 </div>
@@ -14,7 +14,7 @@
             <table>
                 <tr>
                     <td>
-                        <div class="receiptPhotoArea">Receipt Photo</div>
+                        <div class="receiptPhotoArea"><img src={{chosen_receipt.image}}></div>
                     </td>
                     <td width="10px"></td>
                     <td>
@@ -24,21 +24,20 @@
             </table>
         </div>
     </div>
-    
     <div class="container">
         <div class="row-fluid">
             <table class="table table-bordered">
                 <tr>
                     <td width="50"><b>Date</b></td>
-                    <td>{{receipts[0].date}}</td>
+                    <td>{{chosen_receipt.date}}</td>
                 </tr>
                 <tr>
                     <td width="50"><b>Location</b></td>
-                    <td>{{receipts[0].location}}</td>
+                    <td>{{chosen_receipt.location}}</td>
                 </tr>
                 <tr>
                     <td width="50"><b>Price</b></td>
-                    <td>${{receipts[0].total}}</td>
+                    <td>${{chosen_receipt.total}}</td>
                 </tr>
                 <tr>
                     <td colspan="2"><b>Items Purchased</b></td>
@@ -47,7 +46,7 @@
                 <tr height="85">
                     <td colspan="2">
                         <ul>
-                          <li ng-repeat="item in receipts[0].items">
+                          <li ng-repeat="item in chosen_receipt.items">
                             {{item.name}} {{item.quantity}}qty x ${{item.price}}
                           </li>
                         </ul>

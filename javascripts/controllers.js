@@ -1,3 +1,5 @@
+
+
 function MainLayoutCtrl($scope, $routeParams) {
 
   $scope.all_receipts =
@@ -82,13 +84,18 @@ function MainLayoutCtrl($scope, $routeParams) {
 	    'total': 1.25
 	}];
 
-	$scope.decipher = function() {
-		$('#decipher').show();
-		$scope.chosen_receipt = $scope.all_receipts[0];
-	};
+	$scope.chosen_receipt = $scope.all_receipts[0];
 
 	$scope.decipher = function() {
-		$scope.messages.push($scope.chosen_receipt);
+		// console.debug($scope.all_receipts[0]);
+		// $scope.chosen_receipt = $scope.all_receipts[0];
+		// console.debug($scope.chosen_receipt);
+		$('#decipher').show();
+		$(location).delay(3000).attr('href',"#/purchase_summary.html");
+	};
+
+	$scope.saveReceipt = function(r) {
+		$scope.receipts.push($scope.chosen_receipt);
 	};
 	
 }
