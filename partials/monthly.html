@@ -21,17 +21,17 @@
 	<table class="table">
 		<tr>
 			<td>Budget</td>
-			<td>$500.00</td>
+			<td>${{user.monthly_budget}}</td>
 			<td>Edit</td>
 		</tr>
 		<tr>
 			<td>Amt Spent</td>
-			<td>$150.50</td>
+			<td ng-init="getTotalSpent()">${{total_spent}}</td>
 			<td>Edit</td>
 		</tr>
 		<tr>
 			<td>Amt Remain</td>
-			<td colspan="2">$349.50</td>
+			<td colspan="2">${{user.monthly_budget - total_spent}}</td>
 		</tr>
 	</table>
     <div class="well">

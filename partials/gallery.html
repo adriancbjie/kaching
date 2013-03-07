@@ -1,3 +1,4 @@
+<div ng-init="getTotalSpent()">
 <!--NavBar-->
 <div class="navbar navbar-fixed-top">  
     <div class="navbar-inner">  
@@ -16,7 +17,7 @@
     <div class="container">
         <div class="row-fluid">
             <div class="galleryDisplay">
-                <img src={{r.image}}/>
+                <img src={{r.item_image}}/>
             </div>
         </div>
     </div>
@@ -30,10 +31,11 @@
                     </tr>
                 </thead>
                 <tr>
-                    <td> {{receipts}}{{r.date}} </td>
+                    <td> {{r.date}} </td>
                     <td> ${{r.total}} </td>
                 </tr>
             </table>
         </div>
     </div>
+</div>
 </div>
