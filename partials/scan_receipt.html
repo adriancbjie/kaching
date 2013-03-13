@@ -9,25 +9,42 @@
 
 <div class="container-fluid">
     <div class="container">
-        <div class="cameraCaptureArea">
-            <div style="align:center; vertical-align:middle">
-				Deciphering Photo
-			</div>			
-        </div>
-        <video id="live" autoplay></video>
-        <script type="text/javascript">
-          video = document.getElementById("live")
+        <video id="video" width="300" height="400" autoplay></video>
+        <button id="snap">Snap Photo</button>
+        <canvas id="canvas" width="300" height="400"></canvas>
+        <script>
+            // Put event listeners into place
+            window.addEventListener("DOMContentLoaded", function() {
+                // Grab elements, create settings, etc.
+                var canvas = document.getElementById("canvas"),
+                context = canvas.getContext("2d"),
+                video = document.getElementById("video"),
+                videoObj = { "video": true },
+                errBack = function(error) {
+                    console.log("Video capture error: ", error.code); 
+                };
 
-          navigator.webkitGetUserMedia("video",
-              function(stream) {
-                video.src = window.webkitURL.createObjectURL(stream)
-              },
-              function(err) {
-                console.log("Unable to get video stream!")
-              }
-          )
+                // Put video listeners into place
+                if(navigator.getUserMedia) { // Standard
+                    navigator.getUserMedia(videoObj, function(stream) {
+                        video.src = stream;
+                        video.play();
+                    }, errBack);
+                } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+                    navigator.webkitGetUserMedia(videoObj, function(stream){
+                        video.src = window.webkitURL.createObjectURL(stream);
+                        video.play();
+                    }, errBack);
+                }
+            }, false);
+            
+            // Trigger photo take
+            document.getElementById("snap").addEventListener("click", function() {
+                context.drawImage(video, 0, 0, 640, 480);
+            });
         </script>
         <div class="row-fluid" style="text-align:center";>
+			<button id="snap">Snap Photo</button>
             <a class="btn btn-primary btn-large" href="#/purchase_summary.html"><i class="icon-camera"></i>CAMERA ICON</a>
         </div>
     </div>
