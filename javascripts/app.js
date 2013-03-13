@@ -16,87 +16,116 @@ app.run(function ($rootScope) {
 		'name': 'test user',
 		'monthly_budget': 200.00
 	};
+
+	$rootScope.photo_lib = 
+	[{
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S1.png'
+    }, {
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+    }, {
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png'
+    }, {
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S4.png'
+    }, {
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png'
+    }, {
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Group%202%20%28222%20x%20192%29/G5.png'
+    }, {
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Group%202%20%28222%20x%20192%29/G4.png'
+    }, {
+    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Group%202%20%28222%20x%20192%29/G3.png'
+    }];
 	
 	$rootScope.all_receipts =
 	[{
-	    'name': 'WATAMI Japanese Casual Restaurant',
-	    'date': '2013-02-01',
-	    'location': 'Raffles City',
-	    'image': 'https://dl.dropbox.com/u/3179945/kaching/receipt_1.jpg',
+	    'name': 'Deptford Clothing',
+	    'date': '11-12-2011',
+	    'location': '1750 Deptford Center Rd',
+	    'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R1.png',
 	    'items': [{
-	        'name': 'Tokyo Gyudon',
-	        'quantity': '2',
-	        'price': 19.6
-	    }, {
-	        'name': 'Sukiyaki Nabe',
+	        'name': 'tnk - corset sld prnt',
 	        'quantity': '1',
-	        'price': 16.8
+	        'price': 4.99
 	    }, {
-	        'name': 'Butechige Nabe',
+	        'name': 'Glitter Ballet Flat Blue',
 	        'quantity': '1',
-	        'price': 16.8
+	        'price': 19.50
 	    }, {
-	        'name': 'Ishiyaki tsutamina don',
+	        'name': 'swtr - spc dye poncho',
 	        'quantity': '1',
-	        'price': 11.8
+	        'price': 14.99
 	    }, {
-	        'name': 'Matcha Parfait',
+	        'name': 'Emma vneck crop ls',
 	        'quantity': '1',
-	        'price': 6.8
+	        'price': 9.99
 	    }],
-	    'gst': 5.53,
-	    'scharge': 7.18,
-	    'total': 84.5
+	    'item_images': [{
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S1.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S4.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png'
+	    }{
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Group%202%20%28222%20x%20192%29/G5.png'
+	    }],
+	    'gst': 0.00,
+	    'scharge': 0,
+	    'total': 49.47
 	}, {
-	    'name': 'Zirong Trading',
-	    'date': '30-01-2013',
-	    'location': 'Serangoon N Ave 2',
-	    'image': 'https://dl.dropbox.com/u/3179945/kaching/receipt_2.jpg',
+	    'name': 'A15 Clothing',
+	    'date': '19-10-2012',
+	    'location': '2050 Deptford Center Rd',
+	    'image': 'https://dl.dropbox.com/u/3179945/kaching/receipt_5.jpg',
 	    'items': [{
-	        'name': '3x3 stick on x100 pieces',
-	        'quantity': '2',
-	        'price': 1.2
+	        'name': 'Trousers',
+	        'quantity': '1',
+	        'price': 18.00
 	    }, {
-	        'name': 'stick on 3x4',
-	        'quantity': '2',
-	        'price': 1.5
+	        'name': 'Suit Jacket',
+	        'quantity': '1',
+	        'price': 45.90
 	    }, {
-	        'name': 'Zebra name pen black',
-	        'quantity': '5',
-	        'price': 1.3
+	        'name': 'Shirt',
+	        'quantity': '1',
+	        'price': 31.90
 	    }],
-	    'gst': 0,
+	    'item_images': [{
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S1.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S4.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Group%202%20%28222%20x%20192%29/G5.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Group%202%20%28222%20x%20192%29/G4.png'
+	    }, {
+	    	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Group%202%20%28222%20x%20192%29/G3.png'
+	    }],
+	    'gst': 8.71,
 	    'scharge': 0,
-	    'total': 11.9
+	    'total': 95.80
 	}, {
-	    'name': 'Home N Office Products',
-	    'date': '30-01-2013',
-	    'location': 'Serangoon N Ave 2',
-	    'image': 'https://dl.dropbox.com/u/3179945/kaching/receipt_3.jpg',
+	    'name': 'North Charleston',
+	    'date': '29-10-2008',
+	    'location': '5461 Rivers Avenue',
+	    'image': 'https://dl.dropbox.com/u/3179945/kaching/receipt_6.jpg',
 	    'items': [{
-	        'name': 'Zebra Permanent Marker',
+	        'name': 'LBS Textiles',
 	        'quantity': '1',
-	        'price': 1.2
+	        'price': 19.28
 	    }],
-	    'gst': 0.05,
+	    'gst': 0.00,
 	    'scharge': 0,
-	    'total': 1.25
-	}];
-
-	$rootScope.receipts =
-	[{
-	    'name': 'Home N Office Products',
-	    'date': '30-01-2013',
-	    'location': 'Serangoon N Ave 2',
-	    'image': 'https://dl.dropbox.com/u/3179945/kaching/receipt_3.jpg',
-	    'items': [{
-	        'name': 'Zebra Permanent Marker',
-	        'quantity': '1',
-	        'price': 1.2
-	    }],
-	    'gst': 0.05,
-	    'scharge': 0,
-	    'total': 1.25
+	    'total': 19.28
 	}];
 
 	$rootScope.chosen_receipt = null;
