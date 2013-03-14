@@ -104,9 +104,76 @@ app.run(function ($rootScope) {
 		'total': 19.28
 	}];
 
-	$rootScope.receipts = [];
-
-	$rootScope.receipts = $rootScope.all_receipts;
+	$rootScope.receipts =
+	[{
+		'name': 'Deptford Clothing',
+		'date': '11-12-2011',
+		'location': '1750 Deptford Center Rd',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R1.png',
+		'items': [{
+			'name': 'tnk - corset sld prnt',
+			'quantity': '1',
+			'price': 4.99
+		}, {
+			'name': 'Glitter Ballet Flat Blue',
+			'quantity': '1',
+			'price': 19.50
+		}, {
+			'name': 'swtr - spc dye poncho',
+			'quantity': '1',
+			'price': 14.99
+		}, {
+			'name': 'Emma vneck crop ls',
+			'quantity': '1',
+			'price': 9.99
+		}],
+		'item_images': [{
+		'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+	}],
+		'gst': 0.00,
+		'scharge': 0,
+		'total': 49.47
+	}, {
+		'name': 'A15 Clothing',
+		'date': '19-10-2012',
+		'location': '2050 Deptford Center Rd',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
+		'items': [{
+			'name': 'Trousers',
+			'quantity': '1',
+			'price': 18.00
+		}, {
+			'name': 'Suit Jacket',
+			'quantity': '1',
+			'price': 45.90
+		}, {
+			'name': 'Shirt',
+			'quantity': '1',
+			'price': 31.90
+		}],
+		'item_images': [{
+		'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png'
+	}],
+		'gst': 8.71,
+		'scharge': 0,
+		'total': 95.80
+	}, {
+		'name': 'North Charleston',
+		'date': '29-10-2008',
+		'location': '5461 Rivers Avenue',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
+		'items': [{
+			'name': 'LBS Textiles',
+			'quantity': '1',
+			'price': 19.28
+		}],
+		'item_images': [{
+		'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png'
+	}],
+		'gst': 0.00,
+		'scharge': 0,
+		'total': 19.28
+	}];
 
 	$rootScope.chosen_receipt = null;
 
