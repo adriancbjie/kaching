@@ -18,15 +18,15 @@
 								<table>
 									<tr>
 										<td>
-											<div class="receiptPhotoArea"><img style="height: 100%;" src={{chosen_receipt.image_url}}/></div>
+											<div class="receiptPhotoArea" style="height: 100%;"><img src={{chosen_receipt.image_url}}/></div>
 										</td>
 										<td width="5px"></td>
 										<td>
 												<table class="table table-bordered" height="290" width="180">
 													<tr>
-														<td colspan="2">
+														<td colspan="2" style="height: 100%;">
 															<a ng-repeat="item_image in chosen_receipt.item_images">
-															<img style="width: 100%;" src={{item_image.url}}/>
+															<img src={{item_image.url}}/>
 															</a>	
 														</td>
 													</tr>
