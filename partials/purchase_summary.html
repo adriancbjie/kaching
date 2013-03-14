@@ -17,14 +17,14 @@
 							<div class="row-fluid">
 								<table>
 									<tr>
-										<td>
-											<div class="receiptPhotoArea" style="height: 100%; width: 100%;"><img src={{chosen_receipt.image_url}}/></div>
+										<td style="height: 100%;">
+											<div class="receiptPhotoArea"><img src={{chosen_receipt.image_url}}/></div>
 										</td>
 										<td width="5px"></td>
 										<td>
 												<table class="table table-bordered" height="290" width="180">
 													<tr>
-														<td colspan="2" style="height: 100%; width: 100%;">
+														<td colspan="2" style="height: 100%;">
 															<a ng-repeat="item_image in chosen_receipt.item_images">
 															<img src={{item_image.url}}/>
 															</a>	
