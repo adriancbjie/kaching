@@ -18,7 +18,7 @@
 								<table>
 									<tr>
 										<td>
-											<div class="receiptPhotoArea"><img src={{chosen_receipt.image_url}}></div>
+											<div class="receiptPhotoArea"><img style="height: 100%;" src={{chosen_receipt.image_url}}/></div>
 										</td>
 										<td width="5px"></td>
 										<td>
@@ -26,7 +26,7 @@
 													<tr>
 														<td colspan="2">
 															<a ng-repeat="item_image in chosen_receipt.item_images">
-															<img src={{item_image.url}}/>
+															<img style="width: 100%;" src={{item_image.url}}/>
 															</a>	
 														</td>
 													</tr>
