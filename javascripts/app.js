@@ -154,9 +154,9 @@ app.run(function ($rootScope) {
 		$rootScope.chosen_item_photo = $rootScope.photo_lib[randomNum];
 	};
 
-	$rootScope.getMonthExpenditure(){
-		var arr = [];
-		// for(int i)
+	// $rootScope.getMonthExpenditure(){
+	// 	var arr = [];
+	// 	// for(int i)
 
-	};
+	// };
 });
