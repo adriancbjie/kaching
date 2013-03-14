@@ -23,10 +23,11 @@
 									<td width="5px"></td>
 									<td>
 											<table class="table table-bordered" height="290" width="180">
-												<a ng-repeat="item_image in chosen_receipt.item_images">
 													<tr>
 														<td colspan="2" style="margin: 0px auto 0px auto; text-align: center;">
+															<a ng-repeat="item_image in chosen_receipt.item_images">
 															<img src={{item_image.url}}/>
+															</a>
 														</td>
 													</tr>
 													<tr>
@@ -37,7 +38,6 @@
 														
 														</td>
 													</tr>
-												</a>
 											</table>
 									</td>
 								</tr>
