@@ -1,41 +1,49 @@
-<div ng-init="getTotalSpent()">
-<!--NavBar-->
-<div class="navbar navbar-fixed-top">  
-    <div class="navbar-inner">  
-        <div class="container">  
-            <!--Menu Icon-->
-            <div class="nav">
-                <a class="btn btn-primary pull-left" href="#">Home</a>    
-            </div>
-            </ul>  
-        </div>  
-    </div>  
-</div>
+    <div ng-init="getTotalSpent()">
+	<div class="sidetap">
+      <div class="stp-content" id="content">
+        <!-- Content Divs Look Like This -->
+        <div class="stp-content-panel">
+          <header>
+            <a href="#" class="header-button"><span>Home</span></a>
+            <h4>Transaction Gallery</h4>
+          </header>
+          <div class="stp-content-frame">
+            <div class="stp-content-body">
+                <!--Content goes here.-->
+				<div class="container" style="padding-top: 50px;">
 
-<div class="container-fluid" ng-repeat="r in receipts">
-    <!---Item 1-->
-    <div class="container">
-        <div class="row-fluid">
-            <div class="galleryDisplay">
-                <img src={{r.item_images[0].url}}/>
+					<div class="container-fluid" ng-repeat="r in receipts">
+						<!---Item 1-->
+						<div class="container">
+							<div class="row-fluid">
+								<div class="galleryDisplay">
+									<img src={{r.item_images[0].url}}/>
+								</div>
+							</div>
+						</div>
+						<div class="container">
+							<div class ="row-fluid">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Date</th>
+											<th>Cost</th>
+										</tr>
+									</thead>
+									<tr>
+										<td> {{r.date}} </td>
+										<td> ${{r.total}} </td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>				
+				
+				</div>				
             </div>
+          </div>
         </div>
+        <!-- End content Div -->
+      </div>
     </div>
-    <div class="container">
-        <div class ="row-fluid">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Cost</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td> {{r.date}} </td>
-                    <td> ${{r.total}} </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-</div>
+	</div>
