@@ -22,7 +22,7 @@ root {
 
 .cameraCaptureArea {
   min-height: 440px;
-  min-width: 300px;
+  min-width: 150px;
   padding: 19px;
   margin-bottom: 20px;
   text-align: center;
