@@ -18,7 +18,7 @@
 								<table>
 									<tr>
 										<td>
-											<div class="receiptPhotoArea"><img src={{chosen_receipt.image_url}} style="max-height:100%; max-height:100%;"></div>
+											<div class="receiptPhotoArea"><img src={{chosen_receipt.image_url}} style="max-width:100%; max-height:100%;"></div>
 										</td>
 										<td width="5px"></td>
 										<td>
@@ -28,12 +28,12 @@
 														</td>
 													</tr>
 													<tr>
-														<td height="90" width="90">Test</td>
-														<td height="90" width="90">Test</td>
+														<td height="90" width="90"></td>
+														<td height="90" width="90"></td>
 													</tr>
 												</table>
 												<a ng-repeat="item_image in chosen_receipt.item_images">
-												<img src={{item_image.url}} style="max-height:100%; max-height:100%;"/>
+												<img src={{item_image.url}} style="max-width:100%; max-height:100%;"/>
 												</a>	
 										</td>
 									</tr>
@@ -46,6 +46,7 @@
 							<!-- Button to return to take photo page -->
 							<a href="#scan_receipt.html" class="btn">Scan an Item</a>
 						</div>
+						</br>
 						<div class="container">
 							<div class="row-fluid">
 								<table class="table table-bordered">
