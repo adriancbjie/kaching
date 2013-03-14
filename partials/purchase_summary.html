@@ -15,24 +15,24 @@
 					<div class="container-fluid">
 						<div class="container">
 							<div class="row-fluid">
-								<table class="fixed">
+								<table>
 									<tr>
 										<td>
-											<div class="receiptPhotoArea"><img src={{chosen_receipt.image_url}}/></div>
+											<div class="receiptPhotoArea" style="margin: 0px auto 0px auto; text-align: center;"><img src={{chosen_receipt.image_url}}/></div>
 										</td>
 										<td width="5px"></td>
 										<td>
-												<table class="table table-bordered fixed" height="290" width="180">
+												<table class="table table-bordered" height="290" width="180">
 													<tr>
-														<td colspan="2">
+														<td colspan="2" style="margin: 0px auto 0px auto; text-align: center;">
 															<a ng-repeat="item_image in chosen_receipt.item_images">
 															<img src={{item_image.url}}/>
 															</a>	
 														</td>
 													</tr>
 													<tr>
-														<td height="80" width="90"></td>
-														<td height="80" width="90"></td>
+														<td height="80" width="90" style="margin: 0px auto 0px auto; text-align: center;"></td>
+														<td height="80" width="90" style="margin: 0px auto 0px auto; text-align: center;"></td>
 													</tr>
 												</table>
 										</td>
