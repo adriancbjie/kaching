@@ -11,11 +11,11 @@ config(['$routeProvider', function($routeProvider) {
 }]);
 
 app.run(function ($rootScope) {
-
 	$rootScope.user =
 	{
 		'name': 'test user',
-		'monthly_budget': 200.00
+		'monthly_budget': 200.00,
+		'total_budget':500.00
 	};
 
 	$rootScope.asd=[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6];
@@ -179,6 +179,10 @@ app.run(function ($rootScope) {
 			arr.push($rootScope.user.monthly_budget);
 		});
 		return arr;
+	};
+
+	$rootScope.getRemainMonthly = function() {
+		return Math.round((user.monthly_budget - getTotalSpent()) * 100) / 100;
 	};
 
 	// $rootScope.getMonthExpenditure(){
