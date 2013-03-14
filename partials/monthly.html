@@ -1,36 +1,53 @@
 <!--NavBar-->
-<div class="navbar navbar-fixed-top">  
-	<div class="navbar-inner">  
-		<div class="container">  
-			<!--Menu Icon-->
-			<a class="btn btn-navbar pull-left" href="#home.html">Home</a>    
-			<a class="btn btn-navbar pull-right" href="#">Calendar</a>    
-		</div>  
-	</div>  
-</div>
-<div class="container">
-	<table class="table">
-		<tr>
-			<td>Budget</td>
-			<td>${{user.monthly_budget}}</td>
-			<td>Edit</td>
-		</tr>
-		<tr>
-			<td>Amt Spent</td>
-			<td ng-init="getTotalSpent()">${{total_spent}}</td>
-			<td>Edit</td>
-		</tr>
-		<tr>
-			<td>Amt Remain</td>
-			<td colspan="2">${{user.monthly_budget - total_spent}}</td>
-		</tr>
-	</table>
-	<div class="well">
-		<div id="graph" style="width:100%; height:200px;"></div>
-	</div>
+<div class="sidetap">
+  <div class="stp-content" id="content">
+    <!-- Content Divs Look Like This -->
+    <div class="stp-content-panel">
+      <header>
+        <a href="#" class="header-button"><span>Home</span></a>
+		<a href="#" class="header-button right"><span>Calender</span></a>
+        <h4>Monthly Transaction</h4>
+      </header>
+      <div class="stp-content-frame">
+        <div class="stp-content-body">
+		
+		
+            <!--Content goes here.-->
+			<div class="container" style="padding-top: 50px;">
+			
+				<div class="container">
+					<table class="table">
+						<tr>
+							<td>Budget</td>
+							<td>${{user.monthly_budget}}</td>
+							<td>Edit</td>
+						</tr>
+						<tr>
+							<td>Amt Spent</td>
+							<td ng-init="getTotalSpent()">${{total_spent}}</td>
+							<td>Edit</td>
+						</tr>
+						<tr>
+							<td>Amt Remain</td>
+							<td colspan="2">${{user.monthly_budget - total_spent}}</td>
+						</tr>
+					</table>
+					<div class="well">
+						<div id="graph" style="width:100%; height:200px;"></div>
+					</div>
+				</div>
+
+				<div id="expenditure" style="display:none" value={{asd}}>{{asd}}</div>
+			
+
+			</div>				
+        </div>
+      </div>
+    </div>
+    <!-- End content Div -->
+  </div>
 </div>
 
-<div id="expenditure" style="display:none" value={{asd}}>{{asd}}</div>
 
 <!-- <input id="date_picker" name="date_picker" /> -->
 
