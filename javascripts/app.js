@@ -5,6 +5,7 @@ config(['$routeProvider', function($routeProvider) {
 	when('/monthly.html', {templateUrl: 'partials/monthly.html',   controller: RouteCtrl}).
 	when('/gallery.html', {templateUrl: 'partials/gallery.html',   controller: RouteCtrl}).
 	when('/scan_receipt.html', {templateUrl: 'partials/scan_receipt.html',   controller: RouteCtrl}).
+	when('/scan_item.html', {templateUrl: 'partials/scan_item.html',   controller: RouteCtrl}).
 	when('/purchase_summary.html', {templateUrl: 'partials/purchase_summary.html',   controller: RouteCtrl}).
 	otherwise({redirectTo: '/'});
 }]);
@@ -17,7 +18,7 @@ app.run(function ($rootScope) {
 		'monthly_budget': 200.00
 	};
 
-	$rootScope.asd=[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6];
+	// $rootScope.asd=[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6];
 
 	$rootScope.photo_lib = 
 	[{
@@ -69,7 +70,7 @@ app.run(function ($rootScope) {
 		'name': 'A15 Clothing',
 		'date': '19-10-2012',
 		'location': '2050 Deptford Center Rd',
-		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
 		'items': [{
 			'name': 'Trousers',
 			'quantity': '1',
@@ -91,7 +92,7 @@ app.run(function ($rootScope) {
 		'name': 'North Charleston',
 		'date': '29-10-2008',
 		'location': '5461 Rivers Avenue',
-		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
 		'items': [{
 			'name': 'LBS Textiles',
 			'quantity': '1',
@@ -107,23 +108,23 @@ app.run(function ($rootScope) {
 
 	$rootScope.chosen_receipt = null;
 
-	$rootScope.decipher = function() {
-		$('#decipher').show();
-		$(location).delay(3000).attr('href',"#/purchase_summary.html");
+	// $rootScope.decipher = function() {
+	// 	$('#decipher').show();
+	// 	$(location).delay(3000).attr('href',"#/purchase_summary.html");
 
-		$rootScope.chosen_receipt = $rootScope.all_receipts[0];
-	};
+	// 	$rootScope.chosen_receipt = $rootScope.all_receipts[0];
+	// };
 
 	$rootScope.saveReceipt = function(r) {
 		var hasReceipt = false;
 		$rootScope.receipts.push(r);
 
-		// for (var i=0;i<$rootScope.all_receipts.length;i++) {
-		// 	item = all_receipts[i];
-		// 	if (r.name == item.name){
-		// 		$rootScope.all_receipts.remove(i);
-		// 	}
-		// }
+		for (var i=0;i<$rootScope.all_receipts.length;i++) {
+			item = all_receipts[i];
+			if (r.name == item.name){
+				$rootScope.all_receipts.remove(i);
+			}
+		}
 
 		console.log($rootScope.all_receipts);
 	};
@@ -139,5 +140,16 @@ app.run(function ($rootScope) {
 		var entry = {'url' : url}
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
+		console.log($rootScope.chosen_item_photo);
+	};
+
+	$rootScope.random_receipt = function() {
+		var randomNum = Math.floor(Math.random()*$rootScope.all_receipts.length);
+		$rootScope.chosen_receipt = $rootScope.all_receipts[randomNum];
+	};
+
+	$rootScope.random_item_photo = function() {
+		var randomNum = Math.floor(Math.random()*$rootScope.photo_lib.length);
+		$rootScope.chosen_item_photo = $rootScope.photo_lib[randomNum];
 	};
 });
