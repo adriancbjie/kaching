@@ -52,64 +52,70 @@
 <!-- <input id="date_picker" name="date_picker" /> -->
 
 <script type="text/javascript">
-	// // console.log($("#expenditure").text())
- //    chart = new Highcharts.Chart({
- //        chart: {
- //            renderTo: 'graph',
- //            type: 'line',
- //            marginRight: 0,
- //            marginBottom: 0
- //        },
- //        title: {
- //            text: 'Budget for ?',
- //            x: 0 //center
- //        },
- //        subtitle: {
- //            text: '',
- //            x: -20
- //        },
- //        xAxis: {
- //            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
- //                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
- //        },
- //        yAxis: {
- //            title: {
- //                text: '$'
- //            },
- //            plotLines: [{
- //                value: 0,
- //                width: 1,
- //                color: '#808080'
- //            }]
- //        },
- //        tooltip: {
- //            formatter: function() {
- //                    return '<b>'+ this.series.name +'</b><br/>'+
- //                    this.x +': '+ this.y +'°C';
- //            }
- //        },
- //        legend: {
- //            layout: 'vertical',
- //            align: 'right',
- //            verticalAlign: 'right',
- //            x: -10,
- //            y: 100,
- //            borderWidth: 0
- //        },
- //        series: [{
- //            name: 'Cumulative Spent',
- //            data: $("#expenditure").text()
- //        }, {
- //            name: 'Budget',
- //            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
- //        }]
- //    });
+	// console.log($("#expenditure").text())
+	console.log();
+    chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'graph',
+            type: 'line',
+            marginRight: 0,
+            marginBottom: 0
+        },
+        title: {
+            text: 'Budget for ?',
+            x: 0 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: '$'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            formatter: function() {
+                    return '<b>'+ this.series.name +'</b><br/>'+
+                    this.x +': '+ this.y +'°C';
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'right',
+            x: -10,
+            y: 100,
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Cumulative Spent',
+            data: angular.element($("body")).scope().asd
+        }, {
+            name: 'Budget',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }]
+    });
 </script>
 
 <script type="text/javascript">
-	$(function(){
-	    // create a datepicker with default settings
-	    $("#date_picker").mobiscroll().date(); // Shorthand for: $("#scroller").mobiscroll({ preset: 'date' });
-	});
+	// $(function(){
+	//     // create a datepicker with default settings
+	//     $("#date_picker").mobiscroll().date(); // Shorthand for: $("#scroller").mobiscroll({ preset: 'date' });
+	// });
+</script>
+
+<script type="text/javascript">
+  var st = sidetap();
+  $(".header-button.menu").on("click",st.toggle_nav)
 </script>
 

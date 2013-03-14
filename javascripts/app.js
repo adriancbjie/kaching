@@ -18,7 +18,7 @@ app.run(function ($rootScope) {
 		'monthly_budget': 200.00
 	};
 
-	// $rootScope.asd=[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6];
+	$rootScope.asd=[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6];
 
 	$rootScope.photo_lib = 
 	[{
@@ -152,4 +152,8 @@ app.run(function ($rootScope) {
 		var randomNum = Math.floor(Math.random()*$rootScope.photo_lib.length);
 		$rootScope.chosen_item_photo = $rootScope.photo_lib[randomNum];
 	};
+
+	// $rootScope.getMonthExpenditure(){
+
+	// };
 });
