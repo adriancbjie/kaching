@@ -23,17 +23,21 @@
 									<td width="5px"></td>
 									<td>
 											<table class="table table-bordered" height="290" width="180">
-												<tr>
-													<td colspan="2" style="margin: 0px auto 0px auto; text-align: center;">
-														<a ng-repeat="item_image in chosen_receipt.item_images">
-														<img src={{item_image.url}}/>
-														</a>	
-													</td>
-												</tr>
-												<tr>
-													<td height="80" width="90" style="margin: 0px auto 0px auto; text-align: center;"></td>
-													<td height="80" width="90" style="margin: 0px auto 0px auto; text-align: center;"></td>
-												</tr>
+													<tr>
+														<td colspan="2" style="margin: 0px auto 0px auto; text-align: center;">
+															<a ng-repeat="item_image in chosen_receipt.item_images">
+															<img src={{item_image.url}}/>
+															</a>
+														</td>
+													</tr>
+													<tr>
+														<td height="80" width="90" style="margin: 0px auto 0px auto; text-align: center;">
+														
+														</td>
+														<td height="80" width="90" style="margin: 0px auto 0px auto; text-align: center;">
+														
+														</td>
+													</tr>
 											</table>
 									</td>
 								</tr>
@@ -95,7 +99,7 @@
 	<h3 id="myModalLabel">Photo Library</h3>
 </div>
 <div class="modal-body">
-	<ul id="Gallery">
+	<ul id="Gallery" type=none>
 		<li ng-repeat="item_photo in photo_lib">
 			<a href="#/purchase_summary.html" ng-click="add_photo(item_photo.url)"><img src={{item_photo.url}} alt="Image 02" />
 			</li>
