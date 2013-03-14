@@ -15,16 +15,16 @@
 					<div class="container-fluid">
 						<div class="container">
 							<div class="row-fluid">
-								<table>
+								<table class="fixed">
 									<tr>
-										<td style="height: 100%;">
+										<td>
 											<div class="receiptPhotoArea"><img src={{chosen_receipt.image_url}}/></div>
 										</td>
 										<td width="5px"></td>
 										<td>
-												<table class="table table-bordered" height="290" width="180">
+												<table class="table table-bordered fixed" height="290" width="180">
 													<tr>
-														<td colspan="2" style="height: 100%;">
+														<td colspan="2">
 															<a ng-repeat="item_image in chosen_receipt.item_images">
 															<img src={{item_image.url}}/>
 															</a>	
