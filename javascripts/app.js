@@ -119,7 +119,7 @@ app.run(function ($rootScope) {
 
 	$rootScope.saveReceipt = function(r) {
 		var hasReceipt = false;
-		$rootScope.receipts.push(r);
+		$rootScope.receipts.unshift(r);
 
 		// for (var i=0;i<$rootScope.all_receipts.length;i++) {
 		// 	item = all_receipts[i];
