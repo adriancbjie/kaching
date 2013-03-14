@@ -106,6 +106,8 @@ app.run(function ($rootScope) {
 
 	$rootScope.receipts = [];
 
+	$rootScope.receipts = $rootScope.all_receipts;
+
 	$rootScope.chosen_receipt = null;
 
 	// $rootScope.decipher = function() {
@@ -119,21 +121,23 @@ app.run(function ($rootScope) {
 		var hasReceipt = false;
 		$rootScope.receipts.push(r);
 
-		for (var i=0;i<$rootScope.all_receipts.length;i++) {
-			item = all_receipts[i];
-			if (r.name == item.name){
-				$rootScope.all_receipts.remove(i);
-			}
-		}
+		// for (var i=0;i<$rootScope.all_receipts.length;i++) {
+		// 	item = all_receipts[i];
+		// 	if (r.name == item.name){
+		// 		$rootScope.all_receipts.remove(i);
+		// 	}
+		// }
 
-		console.log($rootScope.all_receipts);
+		// console.log($rootScope.all_receipts);
 	};
 
 	$rootScope.getTotalSpent = function() {
-		$rootScope.total_spent = 0;
-		$.each($rootScope.receipts,function() {
-			$rootScope.total_spent += this.total;
+		var sum = 0;
+		$.each($rootScope.receipts,function(index) {
+			var item = $rootScope.receipts[index];
+			sum += item.total;
 		});
+		$rootScope.total_spent = Math.round(sum*100)/100;
 		return $rootScope.total_spent;
 	};
 
@@ -153,6 +157,29 @@ app.run(function ($rootScope) {
 	$rootScope.random_item_photo = function() {
 		var randomNum = Math.floor(Math.random()*$rootScope.photo_lib.length);
 		$rootScope.chosen_item_photo = $rootScope.photo_lib[randomNum];
+	};
+
+	$rootScope.getMonthSpendPlot = function() {
+		//cumulative
+		var arr = [];
+		var sum = 0;
+		arr.push(0);
+		$.each($rootScope.receipts,function(index) {
+			var item = $rootScope.receipts[index];
+			sum += item.total;
+			arr.push(sum);
+		});
+		return arr;
+	};
+
+	$rootScope.getMonthBudgetPlot = function() {
+		var arr = [];
+		arr.push($rootScope.user.monthly_budget);
+		$.each($rootScope.receipts,function(index) {
+			// var item = $rootScope.receipts[index];
+			arr.push($rootScope.user.monthly_budget);
+		});
+		return arr;
 	};
 
 	// $rootScope.getMonthExpenditure(){
