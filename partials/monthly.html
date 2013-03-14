@@ -24,12 +24,12 @@
 						</tr>
 						<tr>
 							<td>Amt Spent</td>
-							<td ng-init="getTotalSpent()">${{total_spent}}</td>
+							<td >${{getTotalSpent()}}</td>
 							<td>Edit</td>
 						</tr>
 						<tr>
 							<td>Amt Remain</td>
-							<td colspan="2">${{user.monthly_budget - total_spent}}</td>
+							<td colspan="2">${{user.monthly_budget - getTotalSpent()}}</td>
 						</tr>
 					</table>
 					<div class="well">
@@ -99,10 +99,10 @@
         },
         series: [{
             name: 'Cumulative Spent',
-            data: angular.element($("body")).scope().asd
+            data: angular.element($("body")).scope().getMonthSpendPlot()
         }, {
             name: 'Budget',
-            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+            data: angular.element($("body")).scope().getMonthBudgetPlot()
         }]
     });
 </script>
