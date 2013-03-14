@@ -134,6 +134,7 @@ app.run(function ($rootScope) {
 		$.each($rootScope.receipts,function() {
 			$rootScope.total_spent += this.total;
 		});
+		return $rootScope.total_spent;
 	};
 
 	$rootScope.add_photo = function(url) {
