@@ -3,19 +3,11 @@
     <div class="navbar-inner">  
         <div class="container">  
             <!--Menu Icon-->
-                    <a class="btn btn-primary pull-left" href="#">Cancel</a>   
-                    <a class="btn btn-primary pull-right" ng-click="saveReceipt(chosen_receipt)" href="#/gallery.html">Done</a>       
+            <a class="btn btn-primary pull-left" href="#">Cancel</a>   
+            <a class="btn btn-primary pull-right" ng-click="saveReceipt(chosen_receipt)" href="#/gallery.html">Done</a>       
         </div>  
     </div>  
 </div>
-
-<!-- <ul id="Gallery">
-    <li><a href="images/full/01.jpg"><img src="https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S1.png" alt="Image 01" /></a></li>
-    <li><a href="images/full/02.jpg"><img src="https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png" alt="Image 02" /></a></li>
-    <li><a href="images/full/03.jpg"><img src="https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png" alt="Image 03" /></a></li>
-    <li><a href="images/full/04.jpg"><img src="https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S4.png" alt="Image 04" /></a></li>
-    <li><a href="images/full/05.jpg"><img src="https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png" alt="Image 05" /></a></li>
-</ul> -->
 
 <div class="container-fluid">
     <div class="container">
@@ -23,11 +15,20 @@
             <table>
                 <tr>
                     <td>
-                        <div class="receiptPhotoArea"><img src={{chosen_receipt.image}}></div>
+                        <div class="receiptPhotoArea"><img src={{chosen_receipt.image_url}}></div>
                     </td>
                     <td width="10px"></td>
                     <td>
-                        <div class="receiptPhotoArea">Item Photo</div>
+                        <!-- Button to trigger modal -->
+                        <a href="#myModal" role="button" class="btn" data-toggle="modal">Item Photo</a>
+                        <ul>
+                            <li ng-repeat="item_image in chosen_receipt.item_images">
+                                <img src={{item_image.url}}/>
+                            </li>
+                            <li>
+                                <div class="receiptPhotoArea">Item Photo</div>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             </table>
@@ -55,9 +56,9 @@
                 <tr height="85">
                     <td colspan="2">
                         <ul>
-                          <li ng-repeat="item in chosen_receipt.items">
-                            {{item.name}} {{item.quantity}}qty x ${{item.price}}
-                          </li>
+                            <li ng-repeat="item in chosen_receipt.items">
+                                {{item.name}} {{item.quantity}}qty x ${{item.price}}
+                            </li>
                         </ul>
                     </td>
                 </tr>                        
@@ -66,10 +67,20 @@
     </div>
 </div>
 
-<script>
-  $(document).ready(function(){
-
-    var myPhotoSwipe = $("#Gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
-
-  });
-</script>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Photo Library</h3>
+</div>
+<div class="modal-body">
+    <ul id="Gallery">
+        <li ng-repeat="item_photo in photo_lib">
+            <a href="#/purchase_summary.html" ng-click="add_photo(item_photo.url)"><img src={{item_photo.url}} alt="Image 02" />
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
