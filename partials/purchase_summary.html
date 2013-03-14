@@ -22,23 +22,15 @@
 										</td>
 										<td width="5px"></td>
 										<td>
-											<table class="table table-bordered">
-												<tr>
-													<td colspan="2">
-														<a ng-repeat="item_image in chosen_receipt.item_images">
-														<img src={{item_image.url}} style="max-width:100%"/>
-														</a>	
-													</td>
-												</tr>
-												<tr>
-													<td>Test</td>
-													<td>Test</td>
-												</tr>
-											</table>
+											<div class="treceiptPhotoArea">
+												<a ng-repeat="item_image in chosen_receipt.item_images">
+												<img src={{item_image.url}} style="max-width:100%"/>
+												</a>	
+											</div>
 											<!-- Button to trigger modal -->
-											<a href="#myModal" role="button" class="btn" data-toggle="modal">Photo Library</a>
+											<a href="#myModal" role="button" class="btn" data-toggle="modal">Library</a>
 											<!-- Button to return to take photo page -->
-											<a href="#scan_receipt.html" class="btn">Take Photo</a>
+											<a href="#scan_receipt.html" class="btn">Scan</a>
 										</td>
 									</tr>
 								</table>
