@@ -213,6 +213,7 @@ app.run(function ($rootScope) {
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
 		console.log($rootScope.chosen_item_photo);
+		$("#main").children().remove();
 		$("#main").append("<img src='"+url+"'/>");
 	};
 
