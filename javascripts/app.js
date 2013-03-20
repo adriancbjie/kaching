@@ -230,6 +230,12 @@ app.run(function ($rootScope) {
 				$("#3rd").append("<img src='"+mainURL+"'/>");							
 			}
 		}
+		
+		//disable both scan and library button
+		if($("#3rd").children().length > 0){
+			$("#libButton").addClass("disabled");
+			$("#scanButton").addClass("disabled");
+		}
 	};
 
 	$rootScope.random_receipt = function() {
