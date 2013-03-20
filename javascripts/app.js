@@ -209,6 +209,8 @@ app.run(function ($rootScope) {
 	};
 
 	$rootScope.add_photo = function(url) {
+		console.log("Funtion Activated");
+		console.log(url);
 		var entry = {'url' : url}
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
