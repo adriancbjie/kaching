@@ -241,6 +241,36 @@ app.run(function ($rootScope) {
 			$("#scanButton").removeAttr("href");
 		}
 	};
+	
+	$rootScope.take_photo = function(url) {
+		console.log("Funtion Activated Photo");
+		console.log(url);
+		if($("#main").children().length == 0){
+			$("#main").append("<img src='"+url+"'/>");
+		} else {
+			var mainURL = $("#main").children().attr("src");
+			if($("#2nd").children().length == 0){
+				$("#main").children().remove();
+				$("#main").append("<img src='"+url+"'/>");		
+				$("#2nd").append("<img src='"+mainURL+"'/>");		
+			} else {
+				var firstURL = $("#2nd").children().attr("src");
+				$("#main").children().remove();
+				$("#2nd").children().remove();
+				$("#main").append("<img src='"+url+"'/>");		
+				$("#2nd").append("<img src='"+firstURL+"'/>");		
+				$("#3rd").append("<img src='"+mainURL+"'/>");							
+			}
+		}
+		
+		//disable both scan and library button
+		if($("#3rd").children().length > 0){
+			$("#libButton").addClass("disabled");
+			$("#libButton").removeAttr("href");
+			$("#scanButton").addClass("disabled");
+			$("#scanButton").removeAttr("href");
+		}
+	};
 
 	$rootScope.random_receipt = function() {
 		var randomNum = Math.floor(Math.random()*$rootScope.all_receipts.length);
