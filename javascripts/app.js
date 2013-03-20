@@ -209,8 +209,6 @@ app.run(function ($rootScope) {
 	};
 
 	$rootScope.add_photo = function(url) {
-		console.log("Funtion Activated");
-		console.log(url);
 		var entry = {'url' : url}
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
@@ -243,9 +241,9 @@ app.run(function ($rootScope) {
 	};
 	
 	$rootScope.take_photo = function(url) {
-		console.log("Funtion Activated Photo");
-		console.log(url);
+		console.log("Check!");
 		if($("#main").children().length == 0){
+		console.log("Criterion Check!");
 			$("#main").append("<img src='"+url+"'/>");
 		} else {
 			var mainURL = $("#main").children().attr("src");
