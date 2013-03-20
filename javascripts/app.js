@@ -213,8 +213,14 @@ app.run(function ($rootScope) {
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
 		console.log($rootScope.chosen_item_photo);
-		$("#main").children().remove();
-		$("#main").append("<img src='"+url+"'/>");
+		if($("#main").children().length == 0){
+			$("#main").append("<img src='"+url+"'/>");
+		} else {
+			var mainURL = $("#main").children().attr("src");
+			console.log(mainURL);
+			$("#main").children().remove();
+			$("#main").append("<img src='"+url+"'/>");		
+		}
 	};
 
 	$rootScope.random_receipt = function() {
