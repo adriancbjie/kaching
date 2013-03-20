@@ -217,9 +217,18 @@ app.run(function ($rootScope) {
 			$("#main").append("<img src='"+url+"'/>");
 		} else {
 			var mainURL = $("#main").children().attr("src");
-			console.log(mainURL);
-			$("#main").children().remove();
-			$("#main").append("<img src='"+url+"'/>");		
+			if($("#1st").children().length == 0){
+				$("#main").children().remove();
+				$("#main").append("<img src='"+url+"'/>");		
+				$("#1st").append("<img src='"+mainURL+"'/>");		
+			} else {
+				var firstURL = $("#1st").children().attr("src");
+				$("#main").children().remove();
+				$("#1st").children().remove();
+				$("#main").append("<img src='"+url+"'/>");		
+				$("#1st").append("<img src='"+firstURL+"'/>");		
+				$("#2nd").append("<img src='"+mainURL+"'/>");							
+			}
 		}
 	};
 
