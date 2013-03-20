@@ -234,7 +234,9 @@ app.run(function ($rootScope) {
 		//disable both scan and library button
 		if($("#3rd").children().length > 0){
 			$("#libButton").addClass("disabled");
+			$("#libButton").removeAttr("href");
 			$("#scanButton").addClass("disabled");
+			$("#scanButton").removeAttr("href");
 		}
 	};
 
