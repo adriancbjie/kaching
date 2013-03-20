@@ -210,9 +210,12 @@ app.run(function ($rootScope) {
 
 	$rootScope.add_photo = function(url) {
 		var entry = {'url' : url}
+		console.log(entry);
+		console.log(url);
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
 		console.log($rootScope.chosen_item_photo);
+		//$("#main").append("<img src='"+entry+"'/>");
 	};
 
 	$rootScope.random_receipt = function() {
