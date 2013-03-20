@@ -217,17 +217,17 @@ app.run(function ($rootScope) {
 			$("#main").append("<img src='"+url+"'/>");
 		} else {
 			var mainURL = $("#main").children().attr("src");
-			if($("#1st").children().length == 0){
+			if($("#2nd").children().length == 0){
 				$("#main").children().remove();
 				$("#main").append("<img src='"+url+"'/>");		
-				$("#1st").append("<img src='"+mainURL+"'/>");		
+				$("#2nd").append("<img src='"+mainURL+"'/>");		
 			} else {
-				var firstURL = $("#1st").children().attr("src");
+				var firstURL = $("#2nd").children().attr("src");
 				$("#main").children().remove();
-				$("#1st").children().remove();
+				$("#2nd").children().remove();
 				$("#main").append("<img src='"+url+"'/>");		
-				$("#1st").append("<img src='"+firstURL+"'/>");		
-				$("#2nd").append("<img src='"+mainURL+"'/>");							
+				$("#2nd").append("<img src='"+firstURL+"'/>");		
+				$("#3rd").append("<img src='"+mainURL+"'/>");							
 			}
 		}
 	};
