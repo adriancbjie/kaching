@@ -133,47 +133,49 @@ app.run(function ($rootScope) {
 		'gst': 0.00,
 		'scharge': 0,
 		'total': 49.47
-	}, {
-		'name': 'A15 Clothing',
-		'date': '19-10-2012',
-		'location': '2050 Deptford Center Rd',
-		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
-		'items': [{
-			'name': 'Trousers',
-			'quantity': '1',
-			'price': 18.00
-		}, {
-			'name': 'Suit Jacket',
-			'quantity': '1',
-			'price': 45.90
-		}, {
-			'name': 'Shirt',
-			'quantity': '1',
-			'price': 31.90
-		}],
-		'item_images': [{
-		'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png'
-	}],
-		'gst': 8.71,
-		'scharge': 0,
-		'total': 95.80
-	}, {
-		'name': 'North Charleston',
-		'date': '29-10-2008',
-		'location': '5461 Rivers Avenue',
-		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
-		'items': [{
-			'name': 'LBS Textiles',
-			'quantity': '1',
-			'price': 19.28
-		}],
-		'item_images': [{
-		'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png'
-	}],
-		'gst': 0.00,
-		'scharge': 0,
-		'total': 19.28
-	}];
+	}
+	// , {
+	// 	'name': 'A15 Clothing',
+	// 	'date': '19-10-2012',
+	// 	'location': '2050 Deptford Center Rd',
+	// 	'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
+	// 	'items': [{
+	// 		'name': 'Trousers',
+	// 		'quantity': '1',
+	// 		'price': 18.00
+	// 	}, {
+	// 		'name': 'Suit Jacket',
+	// 		'quantity': '1',
+	// 		'price': 45.90
+	// 	}, {
+	// 		'name': 'Shirt',
+	// 		'quantity': '1',
+	// 		'price': 31.90
+	// 	}],
+	// 	'item_images': [{
+	// 	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png'
+	// }],
+	// 	'gst': 8.71,
+	// 	'scharge': 0,
+	// 	'total': 95.80
+	// }, {
+	// 	'name': 'North Charleston',
+	// 	'date': '29-10-2008',
+	// 	'location': '5461 Rivers Avenue',
+	// 	'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
+	// 	'items': [{
+	// 		'name': 'LBS Textiles',
+	// 		'quantity': '1',
+	// 		'price': 19.28
+	// 	}],
+	// 	'item_images': [{
+	// 	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png'
+	// }],
+	// 	'gst': 0.00,
+	// 	'scharge': 0,
+	// 	'total': 19.28
+	// }
+	];
 
 	$rootScope.chosen_receipt = null;
 
@@ -186,7 +188,17 @@ app.run(function ($rootScope) {
 
 	$rootScope.saveReceipt = function(r) {
 		var hasReceipt = false;
-		$rootScope.receipts.unshift(r);
+		for (var i in $rootScope.receipts) {
+			var re = $rootScope.receipts[i];
+			if (r.name == re.name){
+				$rootScope.receipts[i] = r;
+				hasReceipt = true;
+			}
+		}
+
+		if (!hasReceipt){
+			$rootScope.receipts.unshift(r);
+		}
 
 		// for (var i=0;i<$rootScope.all_receipts.length;i++) {
 		// 	item = all_receipts[i];
@@ -273,6 +285,17 @@ app.run(function ($rootScope) {
 	$rootScope.random_receipt = function() {
 		var randomNum = Math.floor(Math.random()*$rootScope.all_receipts.length);
 		$rootScope.chosen_receipt = $rootScope.all_receipts[randomNum];
+	};
+
+	$rootScope.setReceipt = function(r) {
+		console.log(r);
+		$rootScope.chosen_receipt = r;
+	};
+
+	$rootScope.load_item_photo = function() {
+		for (var index in $rootScope.chosen_receipt.item_images){
+			$rootScope.add_photo($rootScope.chosen_receipt.item_images[index].url);
+		}
 	};
 
 	$rootScope.random_item_photo = function() {
