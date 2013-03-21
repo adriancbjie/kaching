@@ -222,6 +222,7 @@ app.run(function ($rootScope) {
 
 	$rootScope.add_photo = function(url) {
 		var entry = {'url' : url}
+		console.log("Generating Photos");
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
 		console.log($rootScope.chosen_item_photo);
@@ -235,11 +236,13 @@ app.run(function ($rootScope) {
 				$("#2nd").append("<img src='"+mainURL+"'/>");		
 			} else {
 				var firstURL = $("#2nd").children().attr("src");
-				$("#main").children().remove();
-				$("#2nd").children().remove();
-				$("#main").append("<img src='"+url+"'/>");		
-				$("#2nd").append("<img src='"+firstURL+"'/>");		
-				$("#3rd").append("<img src='"+mainURL+"'/>");							
+				if($("#3rd").children().length == 0){
+					$("#main").children().remove();
+					$("#2nd").children().remove();
+					$("#main").append("<img src='"+url+"'/>");		
+					$("#2nd").append("<img src='"+firstURL+"'/>");		
+					$("#3rd").append("<img src='"+mainURL+"'/>");	
+				}				
 			}
 		}
 		
@@ -255,6 +258,7 @@ app.run(function ($rootScope) {
 	$rootScope.take_photo = function(url) {
 		if($("#main").children().length == 0){
 			$("#main").append("<img src='"+url+"'/>");
+			console.log("Generating Photos");
 		} else {
 			var mainURL = $("#main").children().attr("src");
 			if($("#2nd").children().length == 0){
