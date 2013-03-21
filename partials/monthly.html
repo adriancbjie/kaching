@@ -135,7 +135,7 @@ function datetimeOnSelectDelegate(textDate, inst) {
 
      $(function(){
 	    // create a datepicker with default settings
-	    $("#scroller").mobiscroll({preset: 'date', dateFormat: "MM yy", onSelect: datetimeOnSelectDelegate}); // Shorthand for: $("#scroller").mobiscroll({ preset: 'date' });
+	    $("#scroller").mobiscroll({preset: 'date', dateFormat: "MM yy", onSelect: datetimeOnSelectDelegate, dateOrder:"mmyy"}); // Shorthand for: $("#scroller").mobiscroll({ preset: 'date' });
 	    $("#scroller").hide();
 	});
      </script>
