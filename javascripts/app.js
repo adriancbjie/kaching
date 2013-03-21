@@ -242,7 +242,9 @@ app.run(function ($rootScope) {
 					$("#main").append("<img src='"+url+"'/>");		
 					$("#2nd").append("<img src='"+firstURL+"'/>");		
 					$("#3rd").append("<img src='"+mainURL+"'/>");	
-				}				
+				} else {
+					console.log("3 Squares Full");
+				}
 			}
 		}
 		
@@ -273,6 +275,8 @@ app.run(function ($rootScope) {
 				$("#main").append("<img src='"+url+"'/>");		
 				$("#2nd").append("<img src='"+firstURL+"'/>");		
 				$("#3rd").append("<img src='"+mainURL+"'/>");	
+				} else {
+					console.log("3 Squares Full");
 				}
 			}
 		}
