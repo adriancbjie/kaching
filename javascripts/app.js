@@ -221,12 +221,9 @@ app.run(function ($rootScope) {
 	};
 
 	$rootScope.add_photo = function(url) {
-	console.log("in add photo: "+url);
 		var entry = {'url' : url}
-		console.log("Generating Photos");
 		$rootScope.chosen_receipt.item_images.unshift(entry);
 		$(".modal-footer .btn").click();
-		console.log($rootScope.chosen_item_photo);
 		if($("#main").children().length == 0){
 			$("#main").append("<img src='"+url+"'/>");
 			console.log("<img src='"+url+"'/>");
@@ -260,13 +257,13 @@ app.run(function ($rootScope) {
 		url = "";
 	};
 	
+	$rootScope.transfer
+	
 	$rootScope.take_photo = function(url) {
-	console.log("in take photo: "+url);
+		console.log("in take photo: "+url);
+		$rootScope.temp_url = url;
 		if($("#main").children().length == 0){
-		console.log("in take photo");
 			$("#main").append("<img src='"+url+"'/>");
-			console.log("<img src='"+url+"'/>");
-			console.log(url);
 		} else {
 			var mainURL = $("#main").children().attr("src");
 			if($("#2nd").children().length == 0){
@@ -305,7 +302,8 @@ app.run(function ($rootScope) {
 		console.log("Function");
 		console.log(r);
 		$rootScope.chosen_receipt = r;
-	};
+	};p
+	
 
 	$rootScope.load_item_photo = function() {
 		for (var index in $rootScope.chosen_receipt.item_images){
