@@ -260,6 +260,7 @@ app.run(function ($rootScope) {
 	
 	$rootScope.take_photo = function(url) {
 		if($("#main").children().length == 0){
+		console.log("in take photo");
 			$("#main").append("<img src='"+url+"'/>");
 			console.log("<img src='"+url+"'/>");
 			console.log(url);
