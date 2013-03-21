@@ -256,6 +256,7 @@ app.run(function ($rootScope) {
 			$("#scanButton").addClass("disabled");
 			$("#scanButton").removeAttr("href");
 		}
+		url = "";
 	};
 	
 	$rootScope.take_photo = function(url) {
