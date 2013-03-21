@@ -263,11 +263,13 @@ app.run(function ($rootScope) {
 				$("#2nd").append("<img src='"+mainURL+"'/>");		
 			} else {
 				var firstURL = $("#2nd").children().attr("src");
+				if($("#3rd").children().length == 0){
 				$("#main").children().remove();
 				$("#2nd").children().remove();
 				$("#main").append("<img src='"+url+"'/>");		
 				$("#2nd").append("<img src='"+firstURL+"'/>");		
-				$("#3rd").append("<img src='"+mainURL+"'/>");							
+				$("#3rd").append("<img src='"+mainURL+"'/>");	
+				}
 			}
 		}
 		
