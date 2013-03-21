@@ -286,6 +286,7 @@ app.run(function ($rootScope) {
 	};
 
 	$rootScope.setReceipt = function(r) {
+		console.log("Function");
 		console.log(r);
 		$rootScope.chosen_receipt = r;
 	};
