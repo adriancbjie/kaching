@@ -42,7 +42,7 @@ app.run(function ($rootScope) {
 	$rootScope.all_receipts =
 	[{
 		'name': 'Deptford Clothing',
-		'date': '11-12-2011',
+		'date': [22,"March",2013],
 		'location': '1750 Deptford Center Rd',
 		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R1.png',
 		'items': [{
@@ -66,9 +66,28 @@ app.run(function ($rootScope) {
 		'gst': 0.00,
 		'scharge': 0,
 		'total': 49.47
-	}, {
+	}];
+
+	$rootScope.receipts =
+	[{
+		'name': 'North Charleston',
+		'date': [5,"March",2013],
+		'location': '5461 Rivers Avenue',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
+		'items': [{
+			'name': 'LBS Textiles',
+			'quantity': '1',
+			'price': 19.28
+		}],
+		'item_images': [{
+			'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S1.png'
+		}],
+		'gst': 0.00,
+		'scharge': 0,
+		'total': 19.28
+	},{
 		'name': 'A15 Clothing',
-		'date': '19-10-2012',
+		'date': [15,"February",2013],
 		'location': '2050 Deptford Center Rd',
 		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
 		'items': [{
@@ -84,98 +103,77 @@ app.run(function ($rootScope) {
 			'quantity': '1',
 			'price': 31.90
 		}],
-		'item_images': [],
+		'item_images': [{
+			'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+		}],
 		'gst': 8.71,
 		'scharge': 0,
 		'total': 95.80
-	}, {
-		'name': 'North Charleston',
-		'date': '29-10-2008',
-		'location': '5461 Rivers Avenue',
-		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
+	},{
+		'name': 'Zara',
+		'date': [25,"February",2013],
+		'location': '156 Sommerset',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
 		'items': [{
-			'name': 'LBS Textiles',
+			'name': 'T-Shirt',
 			'quantity': '1',
-			'price': 19.28
-		}],
-		'item_images': [],
-		'gst': 0.00,
-		'scharge': 0,
-		'total': 19.28
-	}];
-
-	$rootScope.receipts =
-	[{
-		'name': 'Deptford Clothing',
-		'date': '11-12-2011',
-		'location': '1750 Deptford Center Rd',
-		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R1.png',
-		'items': [{
-			'name': 'tnk - corset sld prnt',
-			'quantity': '1',
-			'price': 4.99
+			'price': 18.00
 		}, {
-			'name': 'Glitter Ballet Flat Blue',
+			'name': 'Long Pants',
 			'quantity': '1',
-			'price': 19.50
-		}, {
-			'name': 'swtr - spc dye poncho',
-			'quantity': '1',
-			'price': 14.99
-		}, {
-			'name': 'Emma vneck crop ls',
-			'quantity': '1',
-			'price': 9.99
+			'price': 31.90
 		}],
 		'item_images': [{
-		'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
-	}],
-		'gst': 0.00,
+			'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+		}],
+		'gst': 8.71,
 		'scharge': 0,
-		'total': 49.47
-	}
-	// , {
-	// 	'name': 'A15 Clothing',
-	// 	'date': '19-10-2012',
-	// 	'location': '2050 Deptford Center Rd',
-	// 	'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
-	// 	'items': [{
-	// 		'name': 'Trousers',
-	// 		'quantity': '1',
-	// 		'price': 18.00
-	// 	}, {
-	// 		'name': 'Suit Jacket',
-	// 		'quantity': '1',
-	// 		'price': 45.90
-	// 	}, {
-	// 		'name': 'Shirt',
-	// 		'quantity': '1',
-	// 		'price': 31.90
-	// 	}],
-	// 	'item_images': [{
-	// 	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S5.png'
-	// }],
-	// 	'gst': 8.71,
-	// 	'scharge': 0,
-	// 	'total': 95.80
-	// }, {
-	// 	'name': 'North Charleston',
-	// 	'date': '29-10-2008',
-	// 	'location': '5461 Rivers Avenue',
-	// 	'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R2.png',
-	// 	'items': [{
-	// 		'name': 'LBS Textiles',
-	// 		'quantity': '1',
-	// 		'price': 19.28
-	// 	}],
-	// 	'item_images': [{
-	// 	'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S3.png'
-	// }],
-	// 	'gst': 0.00,
-	// 	'scharge': 0,
-	// 	'total': 19.28
-	// }
-	];
+		'total': 58.61
+	},{
+		'name': 'Hello Clothing',
+		'date': [9,"January",2013],
+		'location': '2050 Deptford Center Rd',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
+		'items': [{
+			'name': 'Trousers',
+			'quantity': '1',
+			'price': 20.00
+		}, {
+			'name': 'Shirt',
+			'quantity': '1',
+			'price': 20.00
+		}],
+		'item_images': [{
+			'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+		}],
+		'gst': 8.71,
+		'scharge': 0,
+		'total': 48.71
+	},{
+		'name': 'H & M',
+		'date': [19,"January",2013],
+		'location': '123 Orchard Road',
+		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
+		'items': [{
+			'name': 'Trousers',
+			'quantity': '1',
+			'price': 20.00
+		}, {
+			'name': 'Suit Jacket',
+			'quantity': '1',
+			'price': 35.90
+		}, {
+			'name': 'Shirt',
+			'quantity': '1',
+			'price': 11.10
+		}],
+		'item_images': [{
+			'url' : 'https://dl.dropbox.com/u/3179945/kaching/Single%20%28105%20x%20222%29/S2.png'
+		}],
+		'gst': 8.71,
+		'scharge': 0,
+		'total': 67.00
+	}];
 
 	$rootScope.chosen_receipt = null;
 
@@ -256,22 +254,30 @@ app.run(function ($rootScope) {
 			sum += item.total;
 			arr.push(sum);
 		});
+		console.log("ASD");
+		console.log(arr);
 		return arr;
 	};
 
 	$rootScope.getMonthBudgetPlot = function() {
 		var arr = [];
-		arr.push($rootScope.user.monthly_budget);
+		arr.push(parseFloat($rootScope.user.monthly_budget));
 		$.each($rootScope.receipts,function(index) {
 			// var item = $rootScope.receipts[index];
-			arr.push($rootScope.user.monthly_budget);
+			arr.push(parseFloat($rootScope.user.monthly_budget));
 		});
+		console.log("dsa");
+		console.log(arr);
 		return arr;
 	};
 
 	$rootScope.getRemainMonthly = function() {
 		return Math.round((user.monthly_budget - getTotalSpent()) * 100) / 100;
 	};
+
+	$rootScope.getFormattedDate = function(d){
+		return d[0] + " " + d[1] + " " + d[2];
+	}
 
 	// $rootScope.getMonthExpenditure(){
 	// 	var arr = [];
