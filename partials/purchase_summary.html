@@ -24,16 +24,19 @@
 									<td>
 											<table class="table table-bordered" height="270" width="180">
 													<tr>
-														<td class="unique_asd" id="main" colspan="2" style="margin: 0px auto 0px auto; text-align: center;">
+														<td id="main" colspan="2" style="margin: 0px auto 0px auto; text-align: center;">
 															<!--Main Image-->
+															<img ng-show="chosen_receipt.item_images[0]" src={{chosen_receipt.item_images[0].url}}/>
 														</td>
 													</tr>
 													<tr>
-														<td class="unique_asd" id="2nd" height="60" width="90" style="margin: 0px auto 0px auto; text-align: center;">
+														<td id="2nd" height="60" width="90" style="margin: 0px auto 0px auto; text-align: center;">
 															<!--Small Image-->
+															<img ng-show="chosen_receipt.item_images[1]" src={{chosen_receipt.item_images[1].url}}/>
 														</td>
-														<td class="unique_asd" id="3rd" height="60" width="90" style="margin: 0px auto 0px auto; text-align: center;">
+														<td id="3rd" height="60" width="90" style="margin: 0px auto 0px auto; text-align: center;">
 															<!--Small Image-->
+															<img ng-show="chosen_receipt.item_images[2]" src={{chosen_receipt.item_images[2].url}}/>
 														</td>
 													</tr>
 											</table>
@@ -49,7 +52,7 @@
 						<a href="#/scan_item.html" id="scanButton" class="btn btn-inverse">Scan</a>
 					</div>
 					</br>
-					<div class="container" ng-init="load_item_photo()">
+					<div class="container">
 						<div class="row-fluid">
 							<table class="table table-bordered">
 								<tr>

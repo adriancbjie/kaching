@@ -222,77 +222,13 @@ app.run(function ($rootScope) {
 
 	$rootScope.add_photo = function(url) {
 		var entry = {'url' : url}
-		$rootScope.chosen_receipt.item_images.unshift(entry);
-		$rootScope.load_item_photos();
-		// $(".modal-footer .btn").click();
-		// if($("#main").children().length == 0){
-		// 	$("#main").append("<img src='"+url+"'/>");
-		// 	console.log("<img src='"+url+"'/>");
-		// } else {
-		// 	var mainURL = $("#main").children().attr("src");
-		// 	if($("#2nd").children().length == 0){
-		// 		$("#main").children().remove();
-		// 		$("#main").append("<img src='"+url+"'/>");		
-		// 		$("#2nd").append("<img src='"+mainURL+"'/>");		
-		// 	} else {
-		// 		var firstURL = $("#2nd").children().attr("src");
-		// 		if($("#3rd").children().length == 0){
-		// 			$("#main").children().remove();
-		// 			$("#2nd").children().remove();
-		// 			$("#main").append("<img src='"+url+"'/>");		
-		// 			$("#2nd").append("<img src='"+firstURL+"'/>");		
-		// 			$("#3rd").append("<img src='"+mainURL+"'/>");	
-		// 		} else {
-		// 			console.log("3 Squares Full");
-		// 		}
-		// 	}
-		// }
-		
-		// //disable both scan and library button
-		// if($("#3rd").children().length > 0){
-		// 	$("#libButton").addClass("disabled");
-		// 	$("#libButton").removeAttr("href");
-		// 	$("#scanButton").addClass("disabled");
-		// 	$("#scanButton").removeAttr("href");
-		// }
-		// url = "";
-	};
-	
-	$rootScope.load_item_photos = function(){
-		$(".unique_asd").children().remove();
-		if($rootScope.chosen_receipt.item_images.length == 0){
-			$("#main").append("<img src='"+url+"'/>");
-		} else {
-			var mainURL = $("#main").children().attr("src");
-			if($("#2nd").children().length == 0){
-				$("#main").append("<img src='"+url+"'/>");		
-				$("#2nd").append("<img src='"+mainURL+"'/>");		
-			} else {
-				var firstURL = $("#2nd").children().attr("src");
-				if($("#3rd").children().length == 0){
-					$("#main").append("<img src='"+url+"'/>");		
-					$("#2nd").append("<img src='"+firstURL+"'/>");		
-					$("#3rd").append("<img src='"+mainURL+"'/>");	
-				} else {
-					console.log("3 Squares Full");
-				}
-			}
+		if ($rootScope.chosen_receipt.item_images.length <= 3){
+			$rootScope.chosen_receipt.item_images.unshift(entry);
 		}
-		
-		//disable both scan and library button
-		if($("#3rd").children().length > 0){
-			$("#libButton").addClass("disabled");
-			$("#libButton").removeAttr("href");
-			$("#scanButton").addClass("disabled");
-			$("#scanButton").removeAttr("href");
-		}
-	}
-	
-	$rootScope.take_photo = function(url) {
-		console.log("in take photo: "+url);
-		$rootScope.temp_url = url;
-		
+		$(".close").click()
+
 	};
+
 
 	$rootScope.random_receipt = function() {
 		var randomNum = Math.floor(Math.random()*$rootScope.all_receipts.length);
@@ -304,13 +240,6 @@ app.run(function ($rootScope) {
 		console.log(r);
 		$rootScope.chosen_receipt = r;
 	};
-	
-
-	// $rootScope.load_item_photo = function() {
-	// 	for (var index in $rootScope.chosen_receipt.item_images){
-	// 		$rootScope.add_photo($rootScope.chosen_receipt.item_images[index].url);
-	// 	}
-	// };
 
 	$rootScope.random_item_photo = function() {
 		var randomNum = Math.floor(Math.random()*$rootScope.photo_lib.length);
