@@ -4,7 +4,7 @@
         <!-- Content Divs Look Like This -->
         <div class="stp-content-panel">
           <header>
-            <a href="#" class="header-button"><span>Home</span></a>
+            <a href="#" class="header-button" ng-click="setReceipt(r)"><span>Home</span></a>
             <h4>Transaction Gallery</h4>
           </header>
           <div class="stp-content-frame">
@@ -17,7 +17,7 @@
 						<div class="container">
 							<div class="row-fluid">
 								<div class="galleryDisplay" style="margin: 0px auto 0px auto; text-align: center;">
-									<img src={{r.item_images[0].url}}/>
+									<a ng-click="setReceipt(r)" href="#purchase_summary.html"><img src={{r.item_images[0].url}}/></a>
 								</div>
 							</div>
 						</div>

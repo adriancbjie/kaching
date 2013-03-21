@@ -1,193 +1,147 @@
 <!--NavBar-->
 <div class="sidetap">
-  <div class="stp-content" id="content">
-    <!-- Content Divs Look Like This -->
-    <div class="stp-content-panel">
-      <header>
-        <a href="#" class="header-button"><span>Home</span></a>
-		<a href="#" class="header-button right" onclick="$('#test_default').click()"><span>Calender</span></a>
-        <h4>Monthly Transaction</h4>
-      </header>
-      <div class="stp-content-frame">
-        <div class="stp-content-body">
-		
-		
-            <!--Content goes here.-->
-			<div class="container" style="padding-top: 50px;">
-			
-				<div class="container">
-					<table class="table">
-						<tr>
-							<td>Budget</td>
-							<td>${{user.monthly_budget}}</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Amt Spent</td>
-							<td >${{getTotalSpent()}}</td>
-							<td>Edit</td>
-						</tr>
-						<tr>
-							<td>Amt Remain</td>
-							<td colspan="2">${{(user.monthly_budget - getTotalSpent())}}</td>
-						</tr>
-					</table>
-					<div class="well">
-						<div id="graph" style="width:100%; height:280px;"></div>
-					</div>
+	<div class="stp-content" id="content">
+		<!-- Content Divs Look Like This -->
+		<div class="stp-content-panel">
+			<header>
+				<a href="#" class="header-button"><span>Home</span></a>
+				<a href="javascript:void(0)" class="header-button right" onclick="$('#scroller').mobiscroll('show');"><span>Calender</span></a>
+				<h4>Monthly Transaction</h4>
+			</header>
+			<div class="stp-content-frame">
+				<div class="stp-content-body">
+
+
+					<!--Content goes here.-->
+					<div class="container" style="padding-top: 50px;">
+
+						<div class="container">
+							<table class="table">
+								<tr>
+									<td>Budget</td>
+									<td>${{user.monthly_budget}}</td>
+									<td><a href="#myModal" role="button" id="libButton" class="btn btn-inverse" data-toggle="modal">Edit</a></td>
+								</tr>
+								<tr>
+									<td>Amt Spent</td>
+									<td colspan="2">${{getTotalSpent()}}</td>
+								</tr>
+								<tr>
+									<td>Amt Remain</td>
+									<td colspan="2">${{(user.monthly_budget - getTotalSpent())}}</td>
+								</tr>
+							</table>
+							<div class="well">
+								<div id="graph" style="width:100%; height:280px;"></div>
+							</div>
+						</div>
+					</div>				
 				</div>
-			</div>				
-        </div>
-      </div>
-    </div>
-    <!-- End content Div -->
-  </div>
+			</div>
+		</div>
+		<!-- End content Div -->
+	</div>
 </div>
 
-<script type="text/javascript">
-$(function () {
-	var curr = new Date().getFullYear();
-	var opt = {
-
-	}
-
-	opt.date = {preset : 'date', dateFormat: "MM yy"};
-	opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
-	opt.time = {preset : 'time'};
-	<!--Script-->
-
-	$('select.changes').bind('change', function() {
-		var demo = $('#demo').val();
-		$(".demos").hide();
-		if (!($("#demo_"+demo).length))
-			demo = 'default';
-
-		$("#demo_" + demo).show();
-		$('#test_'+demo).val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: $('#theme').val(), mode: $('#mode').val(), display: $('#display').val(), lang: $('#language').val() }));
-	});
-
-	$('#demo').trigger('change');
-
-});
-</script>
-
-<div class="content">
-	<div style="display:none">
-		<div>
-			<label for="theme">Theme</label>
-			<select name="theme" id="theme" class="changes">
-				<option value="ios">iOS</option>
-				<!--Themes-->
-			</select>
-		</div>
-		<div>
-			<label for="mode">Mode</label>
-			<select name="mode" id="mode" class="changes">
-				<option value="scroller">Scroller</option>
-				<option value="clickpick">Clickpick</option>
-				<option value="mixed">Mixed</option>
-			</select>
-		</div>
-		<div>
-			<label for="display">Display</label>
-			<select name="display" id="display" class="changes">
-				<option value="modal">Modal</option>
-				<option value="inline">Inline</option>
-				<option value="bubble">Bubble</option>
-				<option value="top">Top</option>
-				<option value="bottom">Bottom</option>
-			</select>
-		</div>
-		<div>
-			<label for="language">Language</label>
-			<select name="language" id="language" class="changes">
-				<option value="">English</option>
-				<option value="en">English</option>
-				<!--Lang-->
-			</select>
-		</div>
-		<div>
-			<label for="demo">Demo</label>
-			<select name="demo" id="demo" class="changes">
-				<option value="date" selected>Date</option>
-				<option value="datetime" >Datetime</option>
-				<option value="time" >Time</option>
-				<!--Demos-->
-			</select>
-		</div>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Edit Monthly Budget</h3>
 	</div>
-	<div id="demo_default" class="demos">
-		<input type="text" name="test_default" id="test_default" />
+	<div class="modal-body">
+		Enter new value for Monthly Budget:<input type="text" id="monthly_budget" ng-model="user.monthly_budget"/>
 	</div>
-	<!--Html-->
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Confirm</button>
+	</div>
 </div>
+
+
+
+<input id="scroller" name="scroller"/>
+<div id="date_output">March 2013</div>
 
 
 <script type="text/javascript">
 	// console.log($("#expenditure").text())
-	console.log();
-    chart = new Highcharts.Chart({
-        chart: {
-            renderTo: 'graph',
-            type: 'line',
-            marginRight: 0,
-            marginBottom: 0
-        },
-        title: {
-            text: 'Budget for March',
-            x: 0 //center
-        },
-        subtitle: {
-            text: '',
-            x: -20
-        },
-        xAxis: {
-            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                // 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: '$'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            // formatter: function() {
-            //         return '<b>'+ this.series.name +'</b><br/>'+
-            //         this.x +': '+ this.y +'°C';
-            // }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'right',
-            x: 0,
-            y: 200,
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Cumulative Spent',
-            data: angular.element($("body")).scope().getMonthSpendPlot()
-        }, {
-            name: 'Budget',
-            data: angular.element($("body")).scope().getMonthBudgetPlot()
-        }]
-    });
+	function draw_chart() {
+		chart = new Highcharts.Chart({
+			chart: {
+				renderTo: 'graph',
+				type: 'line',
+				marginRight: 0,
+				marginBottom: 0
+			},
+			title: {
+				text: 'Budget for ' + $("#date_output").text(),
+	            x: 0 //center
+	        },
+	        subtitle: {
+	        	text: '',
+	        	x: -20
+	        },
+	        xAxis: {
+	            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+	                // 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+	            },
+	            yAxis: {
+	            	title: {
+	            		text: '$'
+	            	},
+	            	plotLines: [{
+	            		value: 0,
+	            		width: 1,
+	            		color: '#808080'
+	            	}]
+	            },
+	            tooltip: {
+	            // formatter: function() {
+	            //         return '<b>'+ this.series.name +'</b><br/>'+
+	            //         this.x +': '+ this.y +'°C';
+	            // }
+	        },
+	        legend: {
+	        	layout: 'vertical',
+	        	align: 'right',
+	        	verticalAlign: 'right',
+	        	x: 0,
+	        	y: 200,
+	        	borderWidth: 0
+	        },
+	        series: [{
+	        	name: 'Cumulative Spent',
+	        	data: angular.element($("body")).scope().getMonthSpendPlot()
+	        }, {
+	        	name: 'Budget',
+	        	data: angular.element($("body")).scope().getMonthBudgetPlot()
+	        }]
+	    });
+
+	};
+	draw_chart();
+
 </script>
 
 <script type="text/javascript">
-	// $(function(){
-	//     // create a datepicker with default settings
-	//     $("#date_picker").mobiscroll().date(); // Shorthand for: $("#scroller").mobiscroll({ preset: 'date' });
-	// });
-</script>
+function datetimeOnSelectDelegate(textDate, inst) { 
+ //         if (this.id == "StartDate") {
+           //Do something
+           console.log(textDate);
+           $("#date_output").text(textDate);
+           draw_chart();
+         // }
+     }
 
-<script type="text/javascript">
-  var st = sidetap();
-  $(".header-button.menu").on("click",st.toggle_nav)
-</script>
+     $(function(){
+	    // create a datepicker with default settings
+	    $("#scroller").mobiscroll({preset: 'date', dateFormat: "MM yy", onSelect: datetimeOnSelectDelegate, dateOrder:"mmyy"}); // Shorthand for: $("#scroller").mobiscroll({ preset: 'date' });
+	    $("#scroller").hide();
+	});
+     </script>
+
+     <script type="text/javascript">
+     var st = sidetap();
+     $(".header-button.menu").on("click",st.toggle_nav)
+     </script>
 
