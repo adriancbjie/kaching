@@ -241,9 +241,7 @@ app.run(function ($rootScope) {
 	};
 	
 	$rootScope.take_photo = function(url) {
-		console.log("Check!");
 		if($("#main").children().length == 0){
-		console.log("Criterion Check!");
 			$("#main").append("<img src='"+url+"'/>");
 		} else {
 			var mainURL = $("#main").children().attr("src");
