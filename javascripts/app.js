@@ -221,6 +221,7 @@ app.run(function ($rootScope) {
 	};
 
 	$rootScope.add_photo = function(url) {
+	console.log("in add photo: "+url);
 		var entry = {'url' : url}
 		console.log("Generating Photos");
 		$rootScope.chosen_receipt.item_images.unshift(entry);
@@ -260,6 +261,7 @@ app.run(function ($rootScope) {
 	};
 	
 	$rootScope.take_photo = function(url) {
+	console.log("in take photo: "+url);
 		if($("#main").children().length == 0){
 		console.log("in take photo");
 			$("#main").append("<img src='"+url+"'/>");
