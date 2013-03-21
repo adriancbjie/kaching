@@ -228,6 +228,7 @@ app.run(function ($rootScope) {
 		console.log($rootScope.chosen_item_photo);
 		if($("#main").children().length == 0){
 			$("#main").append("<img src='"+url+"'/>");
+			console.log("<img src='"+url+"'/>");
 		} else {
 			var mainURL = $("#main").children().attr("src");
 			if($("#2nd").children().length == 0){
@@ -260,7 +261,7 @@ app.run(function ($rootScope) {
 	$rootScope.take_photo = function(url) {
 		if($("#main").children().length == 0){
 			$("#main").append("<img src='"+url+"'/>");
-			console.log("Generating Photos");
+			console.log("<img src='"+url+"'/>");
 			console.log(url);
 		} else {
 			var mainURL = $("#main").children().attr("src");
