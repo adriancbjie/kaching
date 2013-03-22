@@ -241,6 +241,13 @@ app.run(function ($rootScope) {
 		if ($rootScope.chosen_receipt.item_images.length <= 3){
 			$rootScope.chosen_receipt.item_images.unshift(entry);
 		}
+
+		if ($rootScope.chosen_receipt.item_images.length >= 3){
+			$("#libButton").addClass("disabled");
+			$("#libButton").removeAttr("href");
+			$("#scanButton").addClass("disabled");
+			$("#scanButton").removeAttr("href");
+		}
 		$(".close").click()
 
 	};
