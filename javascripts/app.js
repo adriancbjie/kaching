@@ -87,7 +87,7 @@ app.run(function ($rootScope) {
 		'total': 19.28
 	},{
 		'name': 'A15 Clothing',
-		'date': [15,"February",2013],
+		'date': [23,"February",2013],
 		'location': '2050 Deptford Center Rd',
 		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
 		'items': [{
@@ -111,7 +111,7 @@ app.run(function ($rootScope) {
 		'total': 95.80
 	},{
 		'name': 'Zara',
-		'date': [25,"February",2013],
+		'date': [13,"February",2013],
 		'location': '156 Sommerset',
 		'image_url': 'https://dl.dropbox.com/u/3179945/kaching/Receipt%20%28191%20x%20468%29/R3.png',
 		'items': [{
@@ -208,11 +208,29 @@ app.run(function ($rootScope) {
 		// console.log($rootScope.all_receipts);
 	};
 
-	$rootScope.getTotalSpent = function() {
+	$rootScope.getTotalSpentInAll = function() {
+		var m = 2;
+		
 		var sum = 0;
 		$.each($rootScope.receipts,function(index) {
 			var item = $rootScope.receipts[index];
-			sum += item.total;
+			if(month[m] === item.date[1]){
+				sum += item.total;
+			}
+		});
+		$rootScope.total_spent = Math.round(sum*100)/100;
+		return $rootScope.total_spent;
+	};
+
+	$rootScope.getTotalSpentInMonth = function() {
+		var m = $("#scroller").mobiscroll('getValue');
+		
+		var sum = 0;
+		$.each($rootScope.receipts,function(index) {
+			var item = $rootScope.receipts[index];
+			if(month[m] === item.date[1]){
+				sum += item.total;
+			}
 		});
 		$rootScope.total_spent = Math.round(sum*100)/100;
 		return $rootScope.total_spent;
@@ -244,34 +262,64 @@ app.run(function ($rootScope) {
 		$rootScope.chosen_item_photo = $rootScope.photo_lib[randomNum];
 	};
 
-	$rootScope.getMonthSpendPlot = function() {
+	var month = {0:"January",1:"February",2:"March",3:"April"};
+
+	$rootScope.getMonthSpendPlot = function(m) {
 		//cumulative
 		var arr = [];
 		var sum = 0;
 		arr.push(0);
-		$.each($rootScope.receipts,function(index) {
-			var item = $rootScope.receipts[index];
-			sum += item.total;
-			arr.push(sum);
-		});
+
+		for(var i = 1 ; i<=31 ; i++) {
+			var added = false;
+			$.each($rootScope.receipts,function(index) {
+				var item = $rootScope.receipts[index];
+
+				if(month[m] === item.date[1] && item.date[0] == i){
+					added = true;
+					sum += item.total;
+					arr.push(sum);
+					// var item = $rootScope.receipts[index];
+					// arr.push(parseFloat($rootScope.user.monthly_budget));
+				}
+				
+			});
+			if (!added){
+				arr.push(sum);
+			}
+		}
 		console.log("ASD");
 		console.log(arr);
 		return arr;
 	};
 
-	$rootScope.getMonthBudgetPlot = function() {
+	$rootScope.getMonthBudgetPlot = function(m) {
 		var arr = [];
 		arr.push(parseFloat($rootScope.user.monthly_budget));
-		$.each($rootScope.receipts,function(index) {
-			// var item = $rootScope.receipts[index];
-			arr.push(parseFloat($rootScope.user.monthly_budget));
-		});
+		// $.each($rootScope.receipts,function(index) {
+		for(var i = 1 ; i<=31 ; i++) {
+			// var r = $rootScope.receipts[index];
+			// if(month[m] === r.date[1]){
+				// var item = $rootScope.receipts[index];
+				arr.push(parseFloat($rootScope.user.monthly_budget));
+			// }
+		// });
+		}
 		console.log("dsa");
 		console.log(arr);
 		return arr;
 	};
 
-	$rootScope.getRemainMonthly = function() {
+	$rootScope.getDaysOfMonth = function(){
+		var arr = [];
+		for (var i = 1; i<=31 ; i++){
+			arr.push(parseInt(i));
+
+		}
+		return arr;
+	}
+
+	$rootScope.getRemainMonthly = function(m) {
 		return Math.round((user.monthly_budget - getTotalSpent()) * 100) / 100;
 	};
 

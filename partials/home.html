@@ -45,9 +45,9 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td onClick="#monthly.html">${{user.total_budget}}</td>
-								<td>${{getTotalSpent()}}</td>
-								<td>${{user.total_budget - getTotalSpent()}}</td>
+								<td onClick="#monthly.html">${{user.monthly_budget}}</td>
+								<td>${{getTotalSpentInAll()}}</td>
+								<td>${{user.monthly_budget - getTotalSpentInAll()}}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -81,7 +81,7 @@
             marginBottom: 0
         },
         title: {
-            text: 'Expenditure Projection',
+            text: 'Budget for March 2013',
             x: 0 //center
         },
         subtitle: {
@@ -89,8 +89,8 @@
             x: -20
         },
         xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                // 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         },
         yAxis: {
             title: {
@@ -118,10 +118,10 @@
         },
         series: [{
             name: 'Cumulative Spent',
-            data: angular.element($("body")).scope().getMonthSpendPlot()
+            data: angular.element($("body")).scope().getMonthSpendPlot(2)
         }, {
             name: 'Budget',
-            data: angular.element($("body")).scope().getMonthBudgetPlot()
+            data: angular.element($("body")).scope().getMonthBudgetPlot(2)
         }]
     });
 </script>
