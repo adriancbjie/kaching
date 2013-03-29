@@ -238,16 +238,19 @@ app.run(function ($rootScope) {
 
 	$rootScope.add_photo = function(url) {
 		var entry = {'url' : url}
-		if ($rootScope.chosen_receipt.item_images.length <= 3){
-			$rootScope.chosen_receipt.item_images.unshift(entry);
-		}
 
 		if ($rootScope.chosen_receipt.item_images.length >= 3){
-			$("#libButton").addClass("disabled");
-			$("#libButton").removeAttr("href");
-			$("#scanButton").addClass("disabled");
-			$("#scanButton").removeAttr("href");
+			$rootScope.chosen_receipt.item_images.pop();
+			// $("#libButton").addClass("disabled");
+			// $("#libButton").removeAttr("href");
+			// $("#scanButton").addClass("disabled");
+			// $("#scanButton").removeAttr("href");
 		}
+
+		// if ($rootScope.chosen_receipt.item_images.length <= 3){
+			$rootScope.chosen_receipt.item_images.unshift(entry);
+		// }
+
 		$(".close").click()
 
 	};

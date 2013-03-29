@@ -16,9 +16,11 @@
 						<!---Item 1-->
 						<div class="container">
 							<div class="row-fluid">
-								<div class="galleryDisplay" style="margin: 0px auto 0px auto; text-align: center;">
-									<a ng-click="setReceipt(r)" href="#purchase_summary.html"><img ng-show="r.item_images[0]" src={{r.item_images[0].url}}/><img ng-hide="r.item_images[0]" src={{r.image_url}}/></a>
-								</div>
+								<a ng-click="setReceipt(r)" href="#purchase_summary.html">
+									<div class="galleryDisplay" style="margin: 0px auto 0px auto; text-align: center;">
+										<img ng-show="r.item_images[0]" src={{r.item_images[0].url}}/><img ng-hide="r.item_images[0]" src={{r.image_url}}/>
+									</div>
+								</a>
 							</div>
 						</div>
 						<div class="container">
