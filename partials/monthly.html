@@ -73,7 +73,7 @@
 		chart = new Highcharts.Chart({
 			chart: {
 				renderTo: 'graph',
-				type: 'line',
+				type: 'spline',
 				marginRight: 0,
 				marginBottom: 0
 			},
@@ -85,25 +85,26 @@
 	        	text: '',
 	        	x: -20
 	        },
-	        xAxis: {
-	        	lineWidth: 1,
-        		tickWidth: 1,
-	        	type: 'linear',
-	            categories: angular.element($("body")).scope().getDaysOfMonth(),
-	            title: {text: "Day"},
-                    labels: {enabled:true,y : 20, rotation: -45, align: 'right'} 
-	            },
-	            yAxis: {
-	            	title: {
-	            		text: '$'
-	            	},
-	            	plotLines: [{
-	            		value: 0,
-	            		width: 1,
-	            		color: '#808080'
-	            	}]
-	            },
-	            tooltip: {
+	        // xAxis: {
+	        	// lineWidth: 1,
+        		// tickWidth: 1,
+	        	// type: 'datetime'
+	        	// ,
+	         //    categories: angular.element($("body")).scope().getDaysOfMonth(),
+	         //    title: {text: "Day"},
+          //       labels: {enabled:true} 
+            // },
+            yAxis: {
+            	title: {
+            		text: '$ Spent'
+            	},
+            	plotLines: [{
+            		value: 0,
+            		width: 1,
+            		color: '#808080'
+            	}]
+            },
+            tooltip: {
 	            // formatter: function() {
 	            //         return '<b>'+ this.series.name +'</b><br/>'+
 	            //         this.x +': '+ this.y +'°C';
@@ -117,13 +118,21 @@
 	        	y: 200,
 	        	borderWidth: 0
 	        },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
 	        series: [{
 	        	name: 'Cumulative Spent',
 	        	data: angular.element($("body")).scope().getMonthSpendPlot(month)
-	        }, {
-	        	name: 'Budget',
-	        	data: angular.element($("body")).scope().getMonthBudgetPlot(month)
 	        }]
+	        // , {
+	        // 	name: 'Budget',
+	        // 	data: angular.element($("body")).scope().getMonthBudgetPlot(month)
+	        // }
 	    });
 
 	};

@@ -76,7 +76,7 @@
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'graph',
-            type: 'line',
+            type: 'spline',
             marginRight: 0,
             marginBottom: 0
         },
@@ -116,13 +116,21 @@
             y: 200,
             borderWidth: 0
         },
+        plotOptions: {
+            spline: {
+                marker: {
+                    enabled: false
+                }
+            }
+        },
         series: [{
             name: 'Cumulative Spent',
             data: angular.element($("body")).scope().getMonthSpendPlot(2)
-        }, {
-            name: 'Budget',
-            data: angular.element($("body")).scope().getMonthBudgetPlot(2)
         }]
+        // , {
+        //     name: 'Budget',
+        //     data: angular.element($("body")).scope().getMonthBudgetPlot(2)
+        // }
     });
 </script>
 

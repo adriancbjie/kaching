@@ -320,7 +320,7 @@ app.run(function ($rootScope) {
 	$rootScope.getDaysOfMonth = function(){
 		var arr = [];
 		for (var i = 1; i<=31 ; i++){
-			arr.push(parseInt(i));
+			arr.push("" + i);
 
 		}
 		return arr;
