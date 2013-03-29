@@ -19,7 +19,7 @@
 							<table class="table">
 								<tr>
 									<td>Budget</td>
-									<td>${{user.monthly_budget}}</td>
+									<td>${{user.current_budget}}</td>
 									<td><a href="#myModal" role="button" id="libButton" class="btn btn-inverse" data-toggle="modal">Edit</a></td>
 								</tr>
 								<tr>
@@ -28,7 +28,7 @@
 								</tr>
 								<tr>
 									<td>Amt Remain</td>
-									<td colspan="2">${{user.monthly_budget - getTotalSpentInMonth()}}</td>
+									<td colspan="2">${{user.current_budget - getTotalSpentInMonth()}}</td>
 								</tr>
 							</table>
 							<div class="well">
@@ -50,10 +50,10 @@
 		<h3 id="myModalLabel">Edit Monthly Budget</h3>
 	</div>
 	<div class="modal-body">
-		Enter new value for Monthly Budget:<input type="text" id="monthly_budget" ng-model="user.monthly_budget"/>
+		Enter new value for Monthly Budget:<input type="text" id="monthly_budget" ng-model="user.current_budget"/>
 	</div>
 	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal" aria-hidden="true" onclick="draw_chart()">Confirm</button>
+		<button class="btn" data-dismiss="modal" aria-hidden="true" onclick="draw_chart()" ng-click="saveMonthBudget(user.current_budget)">Confirm</button>
 	</div>
 </div>
 
@@ -141,6 +141,7 @@ function datetimeOnSelectDelegate(textDate, inst) {
            console.log(textDate);
            $("#date_output").text(textDate);
            draw_chart();
+           angular.element($("body")).scope().updateCurrentBudget();
          // }
      }
 

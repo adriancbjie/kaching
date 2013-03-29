@@ -14,7 +14,8 @@ app.run(function ($rootScope) {
 	$rootScope.user =
 	{
 		'name': 'test user',
-		'monthly_budget': 200.00,
+		'current_budget':300.0,
+		'month_budget': [100.0,200.0,300.0,250.0],
 		'total_budget':500.00
 	};
 
@@ -302,6 +303,33 @@ app.run(function ($rootScope) {
 		console.log(arr);
 		return arr;
 	};
+
+	// $rootScope.getCurrentMonthBudget = function() {
+	// 	var m = $("#scroller").mobiscroll('getValue');
+	// 	if (m == null) {
+	// 		m = 3;
+	// 	}
+
+	// 	var month_budget = $rootScope.user.month_budget;
+	// 	return month_budget[m];
+	// }
+
+	$rootScope.saveMonthBudget = function(value) {
+		var m = $("#scroller").mobiscroll('getValue');
+		if (m == null) {
+			m = 3;
+		}
+		$rootScope.user.month_budget[m] = value;
+	}
+
+	$rootScope.updateCurrentBudget = function() {
+		var m = $("#scroller").mobiscroll('getValue');
+		if (m == null) {
+			m = 3;
+		}
+		$rootScope.user.current_budget = $rootScope.user.month_budget[m];
+		$rootScope.$apply();
+	}
 
 	$rootScope.getMonthBudgetPlot = function(m) {
 		var arr = [];
