@@ -77,20 +77,20 @@
         chart: {
             renderTo: 'graph',
             type: 'spline',
-            marginRight: 0,
-            marginBottom: 0
         },
         title: {
             text: 'Budget for March 2013',
-            x: 0 //center
-        },
-        subtitle: {
-            text: '',
-            x: -20
         },
         xAxis: {
-            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                // 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            // offset: -42,
+            lineWidth: 1,
+            tickWidth: 1,
+            tickInterval: 7,
+            type: 'categories'
+            ,
+            categories: angular.element($("body")).scope().getDaysOfMonth(),
+            title: {text: "Day"},
+            labels: {enabled:true} 
         },
         yAxis: {
             title: {
@@ -103,10 +103,10 @@
             }]
         },
         tooltip: {
-            // formatter: function() {
-            //         return '<b>'+ this.series.name +'</b><br/>'+
-            //         this.x +': '+ this.y +'°C';
-            // }
+            formatter: function() {
+                    return '<b>'+ this.series.name +'</b><br/>'+
+                    'Day ' + this.x +': '+"$"+ this.y;
+            }
         },
         legend: {
             layout: 'vertical',

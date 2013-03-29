@@ -74,26 +74,20 @@
 			chart: {
 				renderTo: 'graph',
 				type: 'spline',
-				marginRight: 0,
-				marginBottom: 0
 			},
 			title: {
 				text: 'Budget for ' + $("#date_output").text(),
-	            x: 0 //center
 	        },
-	        subtitle: {
-	        	text: '',
-	        	x: -20
-	        },
-	        // xAxis: {
-	        	// lineWidth: 1,
-        		// tickWidth: 1,
-	        	// type: 'datetime'
-	        	// ,
-	         //    categories: angular.element($("body")).scope().getDaysOfMonth(),
-	         //    title: {text: "Day"},
-          //       labels: {enabled:true} 
-            // },
+	        xAxis: {
+	        	lineWidth: 1,
+        		tickWidth: 1,
+        		tickInterval: 7,
+	        	type: 'categories'
+	        	,
+	            categories: angular.element($("body")).scope().getDaysOfMonth(),
+	            title: {text: "Day"},
+                labels: {enabled:true} 
+            },
             yAxis: {
             	title: {
             		text: '$ Spent'
@@ -105,10 +99,10 @@
             	}]
             },
             tooltip: {
-	            // formatter: function() {
-	            //         return '<b>'+ this.series.name +'</b><br/>'+
-	            //         this.x +': '+ this.y +'°C';
-	            // }
+	            formatter: function() {
+	                    return '<b>'+ this.series.name +'</b><br/>'+
+	                    'Day ' + this.x +': '+"$"+ this.y;
+	            }
 	        },
 	        legend: {
 	        	layout: 'vertical',
